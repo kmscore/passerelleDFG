@@ -635,6 +635,8 @@ class Images:
 
 	const NjuUkGmImage: CompressedTexture2D = preload("res://assets/textures/NjuUkGM.png")
 
+	const O0020002011355326524Image: CompressedTexture2D = preload("res://assets/textures/o0020002011355326524.gif")
+
 	const Picsart25-04-2322-14-22-988Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-23_22-14-22-988.jpg")
 
 	const Picsart25-04-2415-37-46-028Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-24_15-37-46-028.jpg")

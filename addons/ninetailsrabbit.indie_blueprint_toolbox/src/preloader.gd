@@ -37,8 +37,6 @@ class Scenes:
 
 	const ShockwaveScene: PackedScene = preload("res://components/vfx/2D/shockwave/shockwave.tscn")
 
-	const ControlScene: PackedScene = preload("res://control.tscn")
-
 	const Game-entryPointScene: PackedScene = preload("res://scenes/entry_point/game-entry_point.tscn")
 
 	const NpcScene: PackedScene = preload("res://scenes/world/npc.tscn")
@@ -251,10 +249,6 @@ class Scripts:
 	const PopCircleSpawner = preload("res://components/vfx/2D/pop_effect/pop_circle_spawner.gd")
 
 	const Shockwave = preload("res://components/vfx/2D/shockwave/shockwave.gd")
-
-	const Control_1 = preload("res://control.gd")
-
-	const Fssfsdgf = preload("res://fssfsdgf.gd")
 
 	const TranslationKeys = preload("res://localization/translation_keys.gd")
 

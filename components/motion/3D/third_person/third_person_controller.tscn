@@ -188,6 +188,7 @@ animation = &"walk_back"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235336, 0)
 shape = SubResource("CylinderShape3D_ly4lt")
+debug_color = Color(0.587138, 0.548481, 0.078342, 1)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true

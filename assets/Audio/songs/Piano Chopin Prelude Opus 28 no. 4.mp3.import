@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnker5u47pjfa"
+path="res://.godot/imported/Piano Chopin Prelude Opus 28 no. 4.mp3-28cd02dfc1933a1083eb918f9e7736d8.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/songs/Piano Chopin Prelude Opus 28 no. 4.mp3"
+dest_files=["res://.godot/imported/Piano Chopin Prelude Opus 28 no. 4.mp3-28cd02dfc1933a1083eb918f9e7736d8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

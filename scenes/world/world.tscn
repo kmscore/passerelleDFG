@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://bu1naq7bgris4"]
+
+[ext_resource type="Texture2D" uid="uid://dsr6djuhmuhp5" path="res://assets/textures/Picsart_25-04-23_22-14-22-988.jpg" id="1_sl2e5"]
+[ext_resource type="PackedScene" uid="uid://cose2vydp6e1q" path="res://components/motion/3D/third_person/third_person_controller.tscn" id="2_sl2e5"]
+[ext_resource type="PackedScene" uid="uid://buxwlfq130ybg" path="res://scenes/world/npc.tscn" id="3_1fp7r"]
+[ext_resource type="Texture2D" uid="uid://gfibodj20gmk" path="res://assets/textures/Picsart_25-04-24_23-32-03-748.png" id="4_6m72w"]
+[ext_resource type="PackedScene" uid="uid://ckmpartbateng" path="res://ui/menus/layouts/pixel_art/pause_menu.tscn" id="5_v5dby"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sl2e5"]
+size = Vector3(1, 0.001, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1fp7r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6m72w"]
+albedo_texture = ExtResource("1_sl2e5")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="Environment" id="Environment_sl2e5"]
+background_mode = 1
+background_color = Color(0.95158, 0.95158, 0.95158, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, -0.6, 0)
+shape = SubResource("BoxShape3D_sl2e5")
+debug_color = Color(0.392157, 0.427451, 0.984314, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -0.101, 0)
+mesh = SubResource("PlaneMesh_1fp7r")
+surface_material_override/0 = SubResource("StandardMaterial3D_6m72w")
+
+[node name="ThirdPersonController" parent="." instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.350091, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sl2e5")
+
+[node name="Node3D" parent="." instance=ExtResource("3_1fp7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.644825, 0.15211, -5.39981)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("4_6m72w")
+centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = &"Music"
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_v5dby")]

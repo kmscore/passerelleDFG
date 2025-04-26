@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://oviclgp6j7sr"]
+
+[node name="AudioStreamPlayer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"UI"

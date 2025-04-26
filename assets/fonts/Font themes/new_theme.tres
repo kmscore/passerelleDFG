@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dkse8ss6thrhf"]
+
+[ext_resource type="FontFile" uid="uid://dm4eqe0y2057y" path="res://assets/fonts/Hultog Engraved.ttf" id="1_8kxhb"]
+
+[resource]
+default_font = ExtResource("1_8kxhb")
+default_font_size = 20

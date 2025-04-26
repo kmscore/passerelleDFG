@@ -254,6 +254,8 @@ class Scripts:
 
 	const Control_1 = preload("res://control.gd")
 
+	const Fssfsdgf = preload("res://fssfsdgf.gd")
+
 	const TranslationKeys = preload("res://localization/translation_keys.gd")
 
 	const GameEntryPoint = preload("res://scenes/entry_point/game_entry_point.gd")

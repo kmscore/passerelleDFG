@@ -16,7 +16,7 @@ class_name IndieBlueprintThirdPersonController extends CharacterBody3D
 @export var max_click_position_distance: float = 10.0
 @export var can_change_click_position_while_moving: bool = true
 @export var speed: float = 5.0
-@export var sprint_multiplier: float = 1.5
+@export var sprint_multiplier: float = 1.3
 @export var sprint_action: String = "sprint" # on pourra configurer quelle touche si besoin
 
 

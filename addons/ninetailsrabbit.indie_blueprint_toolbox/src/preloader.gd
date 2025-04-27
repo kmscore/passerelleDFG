@@ -663,6 +663,12 @@ class Images:
 
 	const Picsart25-04-2622-17-05-895Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-26_22-17-05-895.png")
 
+	const Picsart25-04-2719-54-33-422Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-27_19-54-33-422.jpg")
+
+	const Picsart25-04-2719-54-55-231Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-27_19-54-55-231.jpg")
+
+	const Picsart25-04-2720-03-25-933Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-27_20-03-25-933.png")
+
 	const SelectIconImage: CompressedTexture2D = preload("res://assets/textures/select_icon.png")
 
 	const TitleImage: CompressedTexture2D = preload("res://assets/textures/title.png")

@@ -1,7 +1,17 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cqccs7gpefk5s"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cqccs7gpefk5s"]
 
 [ext_resource type="FontFile" uid="uid://cmlnx27ici6eb" path="res://assets/fonts/baketvalley_old_face.ttf" id="1_qen5m"]
+[ext_resource type="Texture2D" uid="uid://df1s3g6lsr8o7" path="res://assets/textures/flare.png" id="3_sw22c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eowg7"]
+texture = ExtResource("3_sw22c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sw22c"]
+texture = ExtResource("3_sw22c")
 
 [resource]
 default_font = ExtResource("1_qen5m")
 default_font_size = 20
+Button/fonts/font = ExtResource("1_qen5m")
+Button/styles/focus = SubResource("StyleBoxTexture_eowg7")
+Button/styles/hover = SubResource("StyleBoxTexture_sw22c")

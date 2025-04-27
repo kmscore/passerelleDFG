@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://ntiluou0bs8h"]
 
 [ext_resource type="Script" uid="uid://l7h042lsrnm4" path="res://ui/menus/layouts/pixel_art/main_menu.gd" id="1_h4174"]
-[ext_resource type="Texture2D" uid="uid://bmqw65f0yrjds" path="res://assets/textures/Picsart_25-04-24_15-37-46-028.jpg" id="2_6demu"]
 [ext_resource type="Theme" uid="uid://cqccs7gpefk5s" path="res://assets/fonts/Font themes/Main_font.tres" id="2_bvnm3"]
-[ext_resource type="FontFile" uid="uid://dv0glr0pgj54t" path="res://assets/fonts/HappyBirthday-Regular.ttf" id="3_3klvd"]
+[ext_resource type="Texture2D" uid="uid://b2u8bis4vf4g4" path="res://assets/textures/background.jpg" id="2_fprrq"]
 [ext_resource type="PackedScene" uid="uid://bleiqd8yjy62p" path="res://ui/menus/layouts/pixel_art/world_selection.tscn" id="3_7jnhg"]
 [ext_resource type="PackedScene" uid="uid://bu1naq7bgris4" path="res://scenes/world/world.tscn" id="4_bvnm3"]
+[ext_resource type="FontFile" uid="uid://c4svve8a8q22k" path="res://assets/fonts/RomanAntique.ttf" id="4_fm2fi"]
 [ext_resource type="PackedScene" uid="uid://cjy60mv75hnb8" path="res://ui/menus/layouts/pixel_art/settings/settings_menu.tscn" id="4_p0cw0"]
 [ext_resource type="Script" uid="uid://dadaarnbffwuu" path="res://ui/menus/layouts/pixel_art/button.gd" id="5_g5i7s"]
 [ext_resource type="AudioStream" uid="uid://cv7v1fyc6ancx" path="res://assets/Audio/SE/150214__pumodi__menu-move-2.mp3" id="6_g5i7s"]
@@ -13,9 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://bkdxua2xlub02" path="res://assets/Audio/songs/789771__dan2008__calm-menu-music-loopable-bitcrushed.wav" id="10_g5i7s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6demu"]
-font = ExtResource("3_3klvd")
+font = ExtResource("4_fm2fi")
 font_size = 200
-font_color = Color(1, 1, 1, 0.866667)
+font_color = Color(0.33, 0, 0.0385, 0.843137)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -34,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_6demu")
+texture = ExtResource("2_fprrq")
 expand_mode = 1
 
 [node name="MainMenuContent" type="MarginContainer" parent="."]
@@ -62,7 +62,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-text = "passerelle"
+text = "Passerelle"
 label_settings = SubResource("LabelSettings_6demu")
 
 [node name="VersionLabel" type="Label" parent="MainMenuContent"]
@@ -102,6 +102,7 @@ unique_name_in_owner = true
 layout_mode = 2
 focus_neighbor_top = NodePath("../QuitGameButton")
 text = "START GAME"
+flat = true
 script = ExtResource("5_g5i7s")
 sound_effect = ExtResource("6_g5i7s")
 hover_sound_effect = ExtResource("7_ke6j3")
@@ -110,6 +111,7 @@ hover_sound_effect = ExtResource("7_ke6j3")
 unique_name_in_owner = true
 layout_mode = 2
 text = "SETTINGS"
+flat = true
 script = ExtResource("5_g5i7s")
 sound_effect = ExtResource("6_g5i7s")
 hover_sound_effect = ExtResource("7_ke6j3")
@@ -118,6 +120,7 @@ hover_sound_effect = ExtResource("7_ke6j3")
 unique_name_in_owner = true
 layout_mode = 2
 text = "FEEDBACK"
+flat = true
 script = ExtResource("5_g5i7s")
 sound_effect = ExtResource("6_g5i7s")
 hover_sound_effect = ExtResource("7_ke6j3")
@@ -127,6 +130,7 @@ unique_name_in_owner = true
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../StartGameButton")
 text = "LEAVE"
+flat = true
 script = ExtResource("5_g5i7s")
 sound_effect = ExtResource("6_g5i7s")
 hover_sound_effect = ExtResource("7_ke6j3")

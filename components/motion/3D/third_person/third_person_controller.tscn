@@ -231,5 +231,6 @@ actor = NodePath("../..")
 metadata/_custom_type_script = "uid://dntfxdw3e7d3p"
 
 [node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -285.653, 0)
 shape = 4
 material = SubResource("ShaderMaterial_f0eqt")

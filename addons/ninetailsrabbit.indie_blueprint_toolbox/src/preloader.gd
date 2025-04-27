@@ -363,6 +363,8 @@ class Resources:
 
 	const SimpleWaterResource: Resource = preload("res://assets/materials/water/simple/simple_water.tres")
 
+	const MainUiThemeResource: Resource = preload("res://assets/textures/Main_UI_Theme.tres")
+
 	const NormalMoonColorGradientResource: Resource = preload("res://components/environment/day_night_cycle/moon_gradients/normal/normal_moon_color_gradient.tres")
 
 	const NormalMoonIntensityCurveResource: Resource = preload("res://components/environment/day_night_cycle/moon_gradients/normal/normal_moon_intensity_curve.tres")
@@ -629,9 +631,21 @@ class Images:
 
 	const YoutubeImage: CompressedTexture2D = preload("res://assets/social/logos/youtube.png")
 
+	const 2TestImage: CompressedTexture2D = preload("res://assets/textures/2test.png")
+
+	const BackgroundImage: CompressedTexture2D = preload("res://assets/textures/background.jpg")
+
+	const BlurredBgImage: CompressedTexture2D = preload("res://assets/textures/blurred bg.png")
+
+	const BlurredImage: CompressedTexture2D = preload("res://assets/textures/blurred.jpg")
+
+	const FlareImage: CompressedTexture2D = preload("res://assets/textures/flare.png")
+
 	const NjuUkGmImage: CompressedTexture2D = preload("res://assets/textures/NjuUkGM.png")
 
 	const O0020002011355326524Image: CompressedTexture2D = preload("res://assets/textures/o0020002011355326524.gif")
+
+	const PauseMenuImage: CompressedTexture2D = preload("res://assets/textures/pause_menu.png")
 
 	const Picsart25-04-2322-14-22-988Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-23_22-14-22-988.jpg")
 
@@ -646,6 +660,8 @@ class Images:
 	const Picsart25-04-2423-42-58-031Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-24_23-42-58-031.png")
 
 	const Picsart25-04-2622-17-05-895Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-26_22-17-05-895.png")
+
+	const SelectIconImage: CompressedTexture2D = preload("res://assets/textures/select_icon.png")
 
 	const DynamicCrosshairImage: CompressedTexture2D = preload("res://autoload/screen/dynamic_crosshair.svg")
 

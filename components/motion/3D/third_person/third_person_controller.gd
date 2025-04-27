@@ -16,8 +16,8 @@ class_name IndieBlueprintThirdPersonController extends CharacterBody3D
 @export var max_click_position_distance: float = 10.0
 @export var can_change_click_position_while_moving: bool = true
 @export var speed: float = 5.0
-@export var sprint_speed_multiplier: float = 1.5
-@export var sprint_action_name: String = "sprint" # on pourra configurer quelle touche si besoin
+@export var sprint_multiplier: float = 1.5
+@export var sprint_action: String = "sprint" # on pourra configurer quelle touche si besoin
 
 
 
@@ -46,11 +46,22 @@ func _ready() -> void:
 	)
 
 var last_input_dir: Vector2 = Vector2.DOWN  # direction par défaut
+
 func _process(delta):
 	var input_vector = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	)
+
+	# Vérifie si l'utilisateur appuie sur la touche de sprint
+	if Input.is_action_pressed(sprint_action):
+		# Applique le multiplicateur de sprint
+		speed = 5.0 * sprint_multiplier
+		animated_sprite.speed_scale = sprint_multiplier
+	else:
+		# Vitesse et animation normales
+		speed = 5.0
+		animated_sprite.speed_scale = 1.0
 
 	if input_vector == Vector2.ZERO:
 		# Idle selon la dernière direction
@@ -98,7 +109,7 @@ func _physics_process(delta):
 
 			# Si on appuie sur "sprint", on multiplie la vitesse
 			if Input.is_action_pressed("sprint"):
-				current_speed *= sprint_speed_multiplier
+				current_speed *= sprint_multiplier
 
 			velocity.x = direction.x * current_speed
 			velocity.z = direction.z * current_speed

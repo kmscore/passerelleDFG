@@ -16,6 +16,9 @@ class_name IndieBlueprintThirdPersonController extends CharacterBody3D
 @export var max_click_position_distance: float = 10.0
 @export var can_change_click_position_while_moving: bool = true
 @export var speed: float = 5.0
+@export var sprint_speed_multiplier: float = 1.5
+@export var sprint_action_name: String = "sprint" # on pourra configurer quelle touche si besoin
+
 
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
@@ -84,19 +87,28 @@ func _physics_process(delta):
 		if input_vector.length() > 0:
 			input_vector = input_vector.normalized()
 
-			# Obtenir la transformation globale de la caméra
 			var cam_transform = camera.global_transform
 			var cam_forward = cam_transform.basis.z
 			var cam_right = cam_transform.basis.x
 
-			# Calculer la direction du mouvement en fonction de l'orientation de la caméra
 			var direction = (cam_forward * input_vector.y + cam_right * input_vector.x).normalized()
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
+
+			# Vitesse normale
+			var current_speed = speed
+
+			# Si on appuie sur "sprint", on multiplie la vitesse
+			if Input.is_action_pressed("sprint"):
+				current_speed *= sprint_speed_multiplier
+
+			velocity.x = direction.x * current_speed
+			velocity.z = direction.z * current_speed
 
 			move_and_slide()
 		else:
 			velocity = Vector3.ZERO
+
+
+
 
 
 

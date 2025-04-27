@@ -665,6 +665,8 @@ class Images:
 
 	const SelectIconImage: CompressedTexture2D = preload("res://assets/textures/select_icon.png")
 
+	const TitleImage: CompressedTexture2D = preload("res://assets/textures/title.png")
+
 	const DynamicCrosshairImage: CompressedTexture2D = preload("res://autoload/screen/dynamic_crosshair.svg")
 
 	const ShakeCamera2dImage: CompressedTexture2D = preload("res://components/camera/2D/shake/shake_camera_2d.svg")

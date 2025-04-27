@@ -1,21 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://ntiluou0bs8h"]
+[gd_scene load_steps=11 format=3 uid="uid://ntiluou0bs8h"]
 
 [ext_resource type="Script" uid="uid://l7h042lsrnm4" path="res://ui/menus/layouts/pixel_art/main_menu.gd" id="1_h4174"]
 [ext_resource type="Theme" uid="uid://cqccs7gpefk5s" path="res://assets/fonts/Font themes/Main_font.tres" id="2_bvnm3"]
-[ext_resource type="Texture2D" uid="uid://b2u8bis4vf4g4" path="res://assets/textures/background.jpg" id="2_fprrq"]
+[ext_resource type="Texture2D" uid="uid://b404aiipsdmni" path="res://assets/textures/Picsart_25-04-27_19-54-33-422.jpg" id="2_g5i7s"]
 [ext_resource type="PackedScene" uid="uid://bleiqd8yjy62p" path="res://ui/menus/layouts/pixel_art/world_selection.tscn" id="3_7jnhg"]
 [ext_resource type="PackedScene" uid="uid://bu1naq7bgris4" path="res://scenes/world/world.tscn" id="4_bvnm3"]
-[ext_resource type="FontFile" uid="uid://c4svve8a8q22k" path="res://assets/fonts/RomanAntique.ttf" id="4_fm2fi"]
 [ext_resource type="PackedScene" uid="uid://cjy60mv75hnb8" path="res://ui/menus/layouts/pixel_art/settings/settings_menu.tscn" id="4_p0cw0"]
 [ext_resource type="Script" uid="uid://dadaarnbffwuu" path="res://ui/menus/layouts/pixel_art/button.gd" id="5_g5i7s"]
 [ext_resource type="AudioStream" uid="uid://cv7v1fyc6ancx" path="res://assets/Audio/SE/150214__pumodi__menu-move-2.mp3" id="6_g5i7s"]
 [ext_resource type="AudioStream" uid="uid://b7nksrxl052nv" path="res://assets/Audio/SE/571579__el_boss__metallic-game-menu-ping-variation-2.wav" id="7_ke6j3"]
 [ext_resource type="AudioStream" uid="uid://bkdxua2xlub02" path="res://assets/Audio/songs/789771__dan2008__calm-menu-music-loopable-bitcrushed.wav" id="10_g5i7s"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_6demu"]
-font = ExtResource("4_fm2fi")
-font_size = 200
-font_color = Color(0.33, 0, 0.0385, 0.843137)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -34,7 +28,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_fprrq")
+texture = ExtResource("2_g5i7s")
 expand_mode = 1
 
 [node name="MainMenuContent" type="MarginContainer" parent="."]
@@ -52,19 +46,6 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="MarginContainer" type="MarginContainer" parent="MainMenuContent"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/margin_top = 30
-
-[node name="TitleLabel" type="Label" parent="MainMenuContent/MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "Passerelle"
-label_settings = SubResource("LabelSettings_6demu")
-
 [node name="VersionLabel" type="Label" parent="MainMenuContent"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -79,10 +60,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -159.0
-offset_top = -116.0
-offset_right = 160.0
-offset_bottom = 272.0
+offset_left = -155.0
+offset_top = -19.0
+offset_right = 164.0
+offset_bottom = 285.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_bvnm3")

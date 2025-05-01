@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bu1naq7bgris4"]
+[gd_scene load_steps=11 format=3 uid="uid://bu1naq7bgris4"]
 
 [ext_resource type="Texture2D" uid="uid://dsr6djuhmuhp5" path="res://assets/textures/Picsart_25-04-23_22-14-22-988.jpg" id="1_sl2e5"]
 [ext_resource type="PackedScene" uid="uid://cose2vydp6e1q" path="res://components/motion/3D/third_person/third_person_controller.tscn" id="2_sl2e5"]
 [ext_resource type="PackedScene" uid="uid://buxwlfq130ybg" path="res://scenes/world/npc.tscn" id="3_1fp7r"]
 [ext_resource type="Texture2D" uid="uid://gfibodj20gmk" path="res://assets/textures/Picsart_25-04-24_23-32-03-748.png" id="4_6m72w"]
 [ext_resource type="PackedScene" uid="uid://ckmpartbateng" path="res://ui/menus/layouts/pixel_art/pause_menu.tscn" id="5_v5dby"]
+[ext_resource type="PackedScene" uid="uid://cddww6s4cdnxv" path="res://scenes/InventorySystem/Inventory/inventory.tscn" id="6_t5ptc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sl2e5"]
 size = Vector3(1, 0.001, 1)
@@ -57,3 +58,16 @@ autoplay = true
 bus = &"Music"
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_v5dby")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("6_t5ptc")]
+layout_mode = 0

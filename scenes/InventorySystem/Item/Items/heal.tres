@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cumsrvtseby17"]
+
+[ext_resource type="Script" uid="uid://dtejhecqo27s1" path="res://scenes/InventorySystem/Item/item_data.gd" id="1_rta66"]
+[ext_resource type="Texture2D" uid="uid://cykdtk4eqdjbm" path="res://scenes/InventorySystem/Item/items.png" id="2_21kk5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhp78"]
+atlas = ExtResource("2_21kk5")
+region = Rect2(0, 0, 1732, 1732)
+
+[resource]
+script = ExtResource("1_rta66")
+name = "heal"
+description = ""
+stackable = true
+texture = SubResource("AtlasTexture_mhp78")
+metadata/_custom_type_script = "uid://dtejhecqo27s1"

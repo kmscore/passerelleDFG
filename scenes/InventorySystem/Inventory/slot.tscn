@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://jos3q0csyuoa"]
+
+[ext_resource type="Script" uid="uid://3bskbtmv2601" path="res://scenes/InventorySystem/Inventory/slot.gd" id="1_mh1ng"]
+[ext_resource type="FontFile" uid="uid://dxl7fsrj14rgi" path="res://assets/fonts/Essays1743-Italic.ttf" id="2_us4g5"]
+
+[node name="Slot" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+script = ExtResource("1_mh1ng")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="QuantityLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_us4g5")
+text = "x99"

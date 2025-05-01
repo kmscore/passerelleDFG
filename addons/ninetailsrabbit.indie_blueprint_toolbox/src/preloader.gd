@@ -39,9 +39,11 @@ class Scenes:
 
 	const Game-entryPointScene: PackedScene = preload("res://scenes/entry_point/game-entry_point.tscn")
 
-	const InventoryScene: PackedScene = preload("res://scenes/Inventory_System/Inventory.tscn")
+	const InventoryScene: PackedScene = preload("res://scenes/InventorySystem/Inventory/inventory.tscn")
 
-	const ItemScene: PackedScene = preload("res://scenes/Inventory_System/Item.tscn")
+	const InventoryfcélineScene: PackedScene = preload("res://scenes/InventorySystem/Inventory/inventoryfcéline.tscn")
+
+	const SlotScene: PackedScene = preload("res://scenes/InventorySystem/Inventory/slot.tscn")
 
 	const NpcScene: PackedScene = preload("res://scenes/world/npc.tscn")
 
@@ -262,11 +264,15 @@ class Scripts:
 
 	const GameEntryPoint = preload("res://scenes/entry_point/game_entry_point.gd")
 
-	const Inventory_1 = preload("res://scenes/Inventory_System/inventory.gd")
+	const Inventory_1 = preload("res://scenes/InventorySystem/Inventory/inventory.gd")
 
-	const Item = preload("res://scenes/Inventory_System/item.gd")
+	const InventoryData = preload("res://scenes/InventorySystem/Inventory/inventory_data.gd")
 
-	const Slot = preload("res://scenes/Inventory_System/slot.gd")
+	const Slot = preload("res://scenes/InventorySystem/Inventory/slot.gd")
+
+	const SlotData = preload("res://scenes/InventorySystem/Inventory/slot_data.gd")
+
+	const ItemData = preload("res://scenes/InventorySystem/Item/item_data.gd")
 
 	const Camera3d = preload("res://scenes/world/camera_3d.gd")
 
@@ -412,6 +418,14 @@ class Resources:
 	const MuzzleFlashBaseMaterialResource: Resource = preload("res://components/motion/3D/first_person/weapons/muzzle/emitter/muzzle_flash_base_material.tres")
 
 	const DefaultBusLayoutResource: Resource = preload("res://default_bus_layout.tres")
+
+	const HealResource: Resource = preload("res://scenes/InventorySystem/Item/Items/heal.tres")
+
+	const HeartResource: Resource = preload("res://scenes/InventorySystem/Item/Items/heart.tres")
+
+	const ItemAtlasResource: Resource = preload("res://scenes/InventorySystem/Item/item_atlas.tres")
+
+	const TestInvResource: Resource = preload("res://scenes/InventorySystem/test_inv.tres")
 
 	const ContentWarningHorrorElementsResource: Resource = preload("res://ui/content_warning/advisors/content_warning_horror_elements.tres")
 
@@ -798,6 +812,8 @@ class Images:
 	const ShockwaveImage: CompressedTexture2D = preload("res://components/vfx/2D/shockwave/shockwave.svg")
 
 	const IconImage: CompressedTexture2D = preload("res://icon.svg")
+
+	const ItemsImage: CompressedTexture2D = preload("res://scenes/InventorySystem/Item/items.png")
 
 	const Ah-ui-lineImage: CompressedTexture2D = preload("res://shaders/vhs/camera-frame-ui/ah-ui-LINE.png")
 

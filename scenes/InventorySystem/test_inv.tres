@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=7 format=3 uid="uid://bb5sniduuq06p"]
+
+[ext_resource type="Script" uid="uid://dne6enb8ytbsh" path="res://scenes/InventorySystem/Inventory/inventory_data.gd" id="1_l26rg"]
+[ext_resource type="Script" uid="uid://ci5nahwqn7l58" path="res://scenes/InventorySystem/Inventory/slot_data.gd" id="2_s6q2b"]
+[ext_resource type="Resource" uid="uid://bg8yqdcdkv1xj" path="res://scenes/InventorySystem/Item/Items/heart.tres" id="3_s6q2b"]
+[ext_resource type="Resource" uid="uid://cumsrvtseby17" path="res://scenes/InventorySystem/Item/Items/heal.tres" id="4_ex4y5"]
+
+[sub_resource type="Resource" id="Resource_qxlt2"]
+script = ExtResource("2_s6q2b")
+itemdata = ExtResource("3_s6q2b")
+quantity = 1
+metadata/_custom_type_script = "uid://ci5nahwqn7l58"
+
+[sub_resource type="Resource" id="Resource_c40xj"]
+script = ExtResource("2_s6q2b")
+itemdata = ExtResource("4_ex4y5")
+quantity = 10
+metadata/_custom_type_script = "uid://ci5nahwqn7l58"
+
+[resource]
+script = ExtResource("1_l26rg")
+slot_datas = Array[ExtResource("2_s6q2b")]([SubResource("Resource_qxlt2"), SubResource("Resource_c40xj"), null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://dne6enb8ytbsh"

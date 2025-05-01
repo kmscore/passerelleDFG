@@ -39,6 +39,10 @@ class Scenes:
 
 	const Game-entryPointScene: PackedScene = preload("res://scenes/entry_point/game-entry_point.tscn")
 
+	const InventoryScene: PackedScene = preload("res://scenes/Inventory_System/Inventory.tscn")
+
+	const ItemScene: PackedScene = preload("res://scenes/Inventory_System/Item.tscn")
+
 	const NpcScene: PackedScene = preload("res://scenes/world/npc.tscn")
 
 	const WorldScene: PackedScene = preload("res://scenes/world/world.tscn")
@@ -258,11 +262,15 @@ class Scripts:
 
 	const GameEntryPoint = preload("res://scenes/entry_point/game_entry_point.gd")
 
+	const Inventory_1 = preload("res://scenes/Inventory_System/inventory.gd")
+
+	const Item = preload("res://scenes/Inventory_System/item.gd")
+
+	const Slot = preload("res://scenes/Inventory_System/slot.gd")
+
 	const Camera3d = preload("res://scenes/world/camera_3d.gd")
 
 	const Npc = preload("res://scenes/world/npc.gd")
-
-	const UserInterface = preload("res://scenes/world/UserInterface.gd")
 
 	const ResizableNinepatchrect = preload("res://ui/components/ninepatchrect/resizable_ninepatchrect.gd")
 
@@ -657,9 +665,19 @@ class Images:
 
 	const YoutubeImage: CompressedTexture2D = preload("res://assets/social/logos/youtube.png")
 
+	const BackgroundImage: CompressedTexture2D = preload("res://assets/textures/background.jpg")
+
+	const BackroungblurrImage: CompressedTexture2D = preload("res://assets/textures/backroungblurr.jpg")
+
+	const GroundImage: CompressedTexture2D = preload("res://assets/textures/ground.jpg")
+
 	const HealImage: CompressedTexture2D = preload("res://assets/textures/heal.png")
 
 	const HeartImage: CompressedTexture2D = preload("res://assets/textures/heart.png")
+
+	const HudImage: CompressedTexture2D = preload("res://assets/textures/hud.png")
+
+	const InventoryImage: CompressedTexture2D = preload("res://assets/textures/inventory.png")
 
 	const LabelImage: CompressedTexture2D = preload("res://assets/textures/label.png")
 
@@ -667,19 +685,9 @@ class Images:
 
 	const Panel9Image: CompressedTexture2D = preload("res://assets/textures/panel9.png")
 
-	const Picsart25-04-2322-14-22-988Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-23_22-14-22-988.jpg")
+	const PausemenuImage: CompressedTexture2D = preload("res://assets/textures/pausemenu.png")
 
-	const Picsart25-04-2423-32-03-748Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-24_23-32-03-748.png")
-
-	const Picsart25-04-2719-54-33-422Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-27_19-54-33-422.jpg")
-
-	const Picsart25-04-2719-54-55-231Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-27_19-54-55-231.jpg")
-
-	const Picsart25-04-2720-03-25-933Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-27_20-03-25-933.png")
-
-	const Picsart25-04-2921-22-20-237Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-29_21-22-20-237.png")
-
-	const Picsart25-04-2921-23-55-732Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-29_21-23-55-732.png")
+	const SelecticonImage: CompressedTexture2D = preload("res://assets/textures/selecticon.png")
 
 	const SlotImage: CompressedTexture2D = preload("res://assets/textures/slot.png")
 
@@ -843,6 +851,8 @@ class Audios:
 	const 745496HarrisonlaceMetallicUiSelectionAudio: AudioStreamWAV = preload("res://assets/Audio/SE/745496__harrisonlace__metallic_ui_selection.wav")
 
 	const 789771Dan2008Calm-menu-music-loopable-bitcrushedAudio: AudioStreamWAV = preload("res://assets/Audio/songs/789771__dan2008__calm-menu-music-loopable-bitcrushed.wav")
+
+	const Juggernaut(ps1)Ost-Cyberspace-InsuranceInvestigation-MrNAtasAudio: AudioStreamMP3 = preload("res://assets/Audio/songs/Juggernaut (PS1) OST - Cyberspace - Insurance Investigation - Mr. N. Atas.mp3")
 
 	const PianoChopinPreludeOpus28No4Audio: AudioStreamMP3 = preload("res://assets/Audio/songs/Piano Chopin Prelude Opus 28 no. 4.mp3")
 

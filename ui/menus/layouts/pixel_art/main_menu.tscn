@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://dadaarnbffwuu" path="res://ui/menus/layouts/pixel_art/button.gd" id="5_g5i7s"]
 [ext_resource type="AudioStream" uid="uid://cv7v1fyc6ancx" path="res://assets/Audio/SE/150214__pumodi__menu-move-2.mp3" id="6_g5i7s"]
 [ext_resource type="AudioStream" uid="uid://b7nksrxl052nv" path="res://assets/Audio/SE/571579__el_boss__metallic-game-menu-ping-variation-2.wav" id="7_ke6j3"]
-[ext_resource type="AudioStream" uid="uid://bkdxua2xlub02" path="res://assets/Audio/songs/789771__dan2008__calm-menu-music-loopable-bitcrushed.wav" id="10_g5i7s"]
+[ext_resource type="AudioStream" uid="uid://4tlvqmyo6lvl" path="res://assets/Audio/songs/Juggernaut (PS1) OST - Cyberspace - Insurance Investigation - Mr. N. Atas.mp3" id="10_g5i7s"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://du0kusvolof3y"]
+[gd_scene load_steps=6 format=3 uid="uid://du0kusvolof3y"]
 
 [ext_resource type="Script" uid="uid://b54w8bdnqdsqc" path="res://ui/menus/layouts/pixel_art/components/world_save_slot_panel.gd" id="2_22ss5"]
 [ext_resource type="AudioStream" uid="uid://cbaxboi4pnpf0" path="res://assets/Audio/SE/744321__fairsonicstudio__bbrs_sfx_menubackpage.wav" id="2_pqasr"]
 [ext_resource type="Theme" uid="uid://cqccs7gpefk5s" path="res://assets/fonts/Font themes/Main_font.tres" id="2_xp28l"]
 [ext_resource type="AudioStream" uid="uid://b7nksrxl052nv" path="res://assets/Audio/SE/571579__el_boss__metallic-game-menu-ping-variation-2.wav" id="3_xjk7x"]
+[ext_resource type="FontFile" uid="uid://dxl7fsrj14rgi" path="res://assets/fonts/Essays1743-Italic.ttf" id="4_xjk7x"]
 
 [node name="WorldSaveSlot" type="HBoxContainer"]
 offset_right = 40.0
@@ -14,7 +15,8 @@ hover_sound_effect = ExtResource("3_xjk7x")
 
 [node name="SaveSlotNumber" type="Label" parent="."]
 layout_mode = 2
-theme = ExtResource("2_xp28l")
+theme_override_fonts/font = ExtResource("4_xjk7x")
+theme_override_font_sizes/font_size = 25
 text = "1"
 
 [node name="WorldSaveSlotPanel" type="Panel" parent="."]
@@ -40,3 +42,4 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "Save slot name"
+horizontal_alignment = 1

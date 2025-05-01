@@ -39,13 +39,13 @@ mesh = SubResource("PlaneMesh_1fp7r")
 surface_material_override/0 = SubResource("StandardMaterial3D_6m72w")
 
 [node name="ThirdPersonController" parent="." instance=ExtResource("2_sl2e5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.350091, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.344, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sl2e5")
 
 [node name="Node3D" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.644825, 0.15211, -5.39981)
+transform = Transform3D(0.837061, 0, -0.54711, 0, 1, 0, 0.54711, 0, 0.837061, 1.84016, 0.15211, -1.73818)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.666667, 0.666667)

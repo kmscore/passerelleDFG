@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnxo5nmoyww0s"]
+
+[ext_resource type="Texture2D" uid="uid://cek30h0g8ey75" path="res://assets/textures/Picsart_25-04-29_21-23-55-732.png" id="1_pyb1i"]
+
+[node name="SpriteSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(75, 7)
+scale = Vector2(0.082, 0.08)
+texture = ExtResource("1_pyb1i")

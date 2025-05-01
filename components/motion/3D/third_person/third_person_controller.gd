@@ -17,14 +17,11 @@ class_name IndieBlueprintThirdPersonController extends CharacterBody3D
 @export var can_change_click_position_while_moving: bool = true
 @export var speed: float = 5.0
 @export var sprint_multiplier: float = 1.3
-@export var sprint_action: String = "sprint" # on pourra configurer quelle touche si besoin
-
-
+@export var sprint_action: String = "sprint"
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var camera: CameraShake3D = %Camera3D
 @onready var click_mode_state_machine: IndieBlueprintFiniteStateMachine = $ClickModeStateMachine
-
 
 enum MovementMode {
 	Click,
@@ -47,36 +44,34 @@ func _ready() -> void:
 
 var last_input_dir: Vector2 = Vector2.DOWN  # direction par défaut
 
-func _process(delta):
+func _process(_delta):
 	var input_vector = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	)
 
-	# Vérifie si l'utilisateur appuie sur la touche de sprint
 	if Input.is_action_pressed(sprint_action):
-		# Applique le multiplicateur de sprint
 		speed = 5.0 * sprint_multiplier
 		animated_sprite.speed_scale = sprint_multiplier
 	else:
-		# Vitesse et animation normales
 		speed = 5.0
 		animated_sprite.speed_scale = 1.0
 
 	if input_vector == Vector2.ZERO:
-		# Idle selon la dernière direction
 		if abs(last_input_dir.x) > abs(last_input_dir.y):
 			animated_sprite.play("idle_right" if last_input_dir.x > 0 else "idle_left")
 		else:
-			animated_sprite.play("idle_front" if last_input_dir.y > 0 else "idle_back")
+			if last_input_dir.y > 0:
+					animated_sprite.play("idle_front")
+			else:
+				animated_sprite.play("idle_back")
 	else:
 		last_input_dir = input_vector
 		if abs(input_vector.x) > abs(input_vector.y):
 			animated_sprite.play("walk_right" if input_vector.x > 0 else "walk_left")
 		else:
 			animated_sprite.play("walk_front" if input_vector.y > 0 else "walk_back")
-
-
+			
 func look_at_mouse() -> void:
 	var mouse = get_viewport().get_mouse_position()
 	var origin := camera.project_ray_origin(mouse)
@@ -88,7 +83,7 @@ func look_at_mouse() -> void:
 		
 		look_at(Vector3(look_position.x, global_position.y, look_position.z))
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if movement_mode == MovementMode.Free:
 		var input_vector = Vector2(
 			Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),

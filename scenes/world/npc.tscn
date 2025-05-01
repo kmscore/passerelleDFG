@@ -1,24 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://buxwlfq130ybg"]
+[gd_scene load_steps=5 format=3 uid="uid://buxwlfq130ybg"]
 
-[ext_resource type="Texture2D" uid="uid://ocpwvij8wo4g" path="res://assets/textures/NjuUkGM.png" id="1_kmc6d"]
+[ext_resource type="Script" uid="uid://clc4l8wap1cvi" path="res://scenes/world/npc.gd" id="1_1oqjc"]
+[ext_resource type="Texture2D" uid="uid://dwbl4rn3t47rr" path="res://assets/characters/Idle sprite.png" id="1_kmc6d"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1oqjc"]
-height = 1.0
+height = 1.31775
+radius = 2.53711
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kmc6d"]
+size = Vector3(0.500854, 1, 0.11084)
 
-[node name="Node3D" type="CharacterBody3D"]
+[node name="NPC" type="CharacterBody3D"]
 collision_layer = 2
+script = ExtResource("1_1oqjc")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
 texture = ExtResource("1_kmc6d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.532776, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120117, 0)
 shape = SubResource("CylinderShape3D_1oqjc")
 debug_color = Color(0, 0.6, 0.701961, 1)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="colision" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="colision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00860596, 0, 0.00317383)
 shape = SubResource("BoxShape3D_kmc6d")

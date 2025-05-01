@@ -13,7 +13,7 @@
 atlas = ExtResource("2_ly4lt")
 region = Rect2(440, 0, 44, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d13bg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly4lt"]
 atlas = ExtResource("2_ly4lt")
 region = Rect2(44, 0, 44, 48)
 
@@ -33,11 +33,11 @@ region = Rect2(396, 0, 44, 48)
 atlas = ExtResource("2_ly4lt")
 region = Rect2(484, 0, 44, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fjcku"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d13bg"]
 atlas = ExtResource("2_ly4lt")
 region = Rect2(0, 0, 44, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kj06u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xb0r"]
 atlas = ExtResource("2_ly4lt")
 region = Rect2(88, 0, 44, 48)
 
@@ -69,7 +69,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d13bg")
+"texture": SubResource("AtlasTexture_ly4lt")
 }],
 "loop": true,
 "name": &"idle_front",
@@ -104,10 +104,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fjcku")
+"texture": SubResource("AtlasTexture_d13bg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kj06u")
+"texture": SubResource("AtlasTexture_2xb0r")
 }],
 "loop": true,
 "name": &"walk_front",
@@ -183,7 +183,7 @@ animated_sprite = NodePath("AnimatedSprite3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_4mqdg")
-animation = &"walk_back"
+animation = &"idle_front"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235336, 0)

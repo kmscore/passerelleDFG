@@ -51,6 +51,8 @@ class Scenes:
 
 	const InputRemapPanelScene: PackedScene = preload("res://ui/menus/components/panel/input_remap_panel.tscn")
 
+	const SpriteSelectScene: PackedScene = preload("res://ui/menus/layouts/pixel_art/assets/sprite_select.tscn")
+
 	const MenuDisplayPanelScene: PackedScene = preload("res://ui/menus/layouts/pixel_art/components/menu_display_panel.tscn")
 
 	const WorldSaveSlotPanelScene: PackedScene = preload("res://ui/menus/layouts/pixel_art/components/world_save_slot_panel.tscn")
@@ -238,6 +240,8 @@ class Scripts:
 
 	const FogVolume_1 = preload("res://components/motion/3D/third_person/fog_volume.gd")
 
+	const Inventory = preload("res://components/motion/3D/third_person/inventory.gd")
+
 	const SpringArmPivot = preload("res://components/motion/3D/third_person/spring_arm_pivot.gd")
 
 	const ThirdPersonController = preload("res://components/motion/3D/third_person/third_person_controller.gd")
@@ -255,6 +259,10 @@ class Scripts:
 	const GameEntryPoint = preload("res://scenes/entry_point/game_entry_point.gd")
 
 	const Camera3d = preload("res://scenes/world/camera_3d.gd")
+
+	const Npc = preload("res://scenes/world/npc.gd")
+
+	const UserInterface = preload("res://scenes/world/UserInterface.gd")
 
 	const ResizableNinepatchrect = preload("res://ui/components/ninepatchrect/resizable_ninepatchrect.gd")
 
@@ -334,6 +342,8 @@ class Scripts:
 
 	const PauseMenu = preload("res://ui/menus/layouts/pixel_art/pause_menu.gd")
 
+	const QuitGameButton = preload("res://ui/menus/layouts/pixel_art/quit_game_button.gd")
+
 	const DisplaySettingsMenu = preload("res://ui/menus/layouts/pixel_art/settings/display_settings_menu.gd")
 
 	const SettingsMenu = preload("res://ui/menus/layouts/pixel_art/settings/settings_menu.gd")
@@ -359,11 +369,7 @@ class Scripts:
 class Resources:
 	const MainFontResource: Resource = preload("res://assets/fonts/Font themes/Main_font.tres")
 
-	const NewThemeResource: Resource = preload("res://assets/fonts/Font themes/new_theme.tres")
-
 	const SimpleWaterResource: Resource = preload("res://assets/materials/water/simple/simple_water.tres")
-
-	const MainUiThemeResource: Resource = preload("res://assets/textures/Main_UI_Theme.tres")
 
 	const NormalMoonColorGradientResource: Resource = preload("res://components/environment/day_night_cycle/moon_gradients/normal/normal_moon_color_gradient.tres")
 
@@ -409,7 +415,7 @@ class Resources:
 
 	const ContentWarningSuicideResource: Resource = preload("res://ui/content_warning/advisors/content_warning_suicide.tres")
 
-	const NewThemeResource_1: Resource = preload("res://ui/menus/layouts/new_theme.tres")
+	const NewThemeResource: Resource = preload("res://ui/menus/layouts/new_theme.tres")
 
 	const MainmenuthemeResource: Resource = preload("res://ui/menus/layouts/pixel_art/mainmenutheme.tres")
 
@@ -463,6 +469,26 @@ class Shaders:
 	const VignetteShader: Shader = preload("res://shaders/vignette/vignette.gdshader")
 
 class Images:
+	const 1Image: CompressedTexture2D = preload("res://assets/characters/1.png")
+
+	const 2Image: CompressedTexture2D = preload("res://assets/characters/2.png")
+
+	const 3Image: CompressedTexture2D = preload("res://assets/characters/3.png")
+
+	const 4Image: CompressedTexture2D = preload("res://assets/characters/4.png")
+
+	const 5Image: CompressedTexture2D = preload("res://assets/characters/5.png")
+
+	const 6Image: CompressedTexture2D = preload("res://assets/characters/6.png")
+
+	const 7Image: CompressedTexture2D = preload("res://assets/characters/7.png")
+
+	const 8Image: CompressedTexture2D = preload("res://assets/characters/8.png")
+
+	const 9Image: CompressedTexture2D = preload("res://assets/characters/9.png")
+
+	const IdleSpriteImage: CompressedTexture2D = preload("res://assets/characters/Idle sprite.png")
+
 	const PetscopPlayerImage: CompressedTexture2D = preload("res://assets/characters/petscop_player.png")
 
 	const Leander-sampleImage: CompressedTexture2D = preload("res://assets/fonts/Leander-Sample.png")
@@ -631,37 +657,19 @@ class Images:
 
 	const YoutubeImage: CompressedTexture2D = preload("res://assets/social/logos/youtube.png")
 
-	const 2TestImage: CompressedTexture2D = preload("res://assets/textures/2test.png")
+	const HealImage: CompressedTexture2D = preload("res://assets/textures/heal.png")
 
-	const BackgroundImage: CompressedTexture2D = preload("res://assets/textures/background.jpg")
+	const HeartImage: CompressedTexture2D = preload("res://assets/textures/heart.png")
 
-	const BlurredBgImage: CompressedTexture2D = preload("res://assets/textures/blurred bg.png")
-
-	const BlurredImage: CompressedTexture2D = preload("res://assets/textures/blurred.jpg")
-
-	const FlareImage: CompressedTexture2D = preload("res://assets/textures/flare.png")
-
-	const NjuUkGmImage: CompressedTexture2D = preload("res://assets/textures/NjuUkGM.png")
+	const LabelImage: CompressedTexture2D = preload("res://assets/textures/label.png")
 
 	const O0020002011355326524Image: CompressedTexture2D = preload("res://assets/textures/o0020002011355326524.gif")
 
 	const Panel9Image: CompressedTexture2D = preload("res://assets/textures/panel9.png")
 
-	const PauseMenuImage: CompressedTexture2D = preload("res://assets/textures/pause_menu.png")
-
 	const Picsart25-04-2322-14-22-988Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-23_22-14-22-988.jpg")
 
-	const Picsart25-04-2415-37-46-028Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-24_15-37-46-028.jpg")
-
-	const Picsart25-04-2415-55-46-952Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-24_15-55-46-952.jpg")
-
-	const Picsart25-04-2423-27-12-749Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-24_23-27-12-749.png")
-
 	const Picsart25-04-2423-32-03-748Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-24_23-32-03-748.png")
-
-	const Picsart25-04-2423-42-58-031Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-24_23-42-58-031.png")
-
-	const Picsart25-04-2622-17-05-895Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-26_22-17-05-895.png")
 
 	const Picsart25-04-2719-54-33-422Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-27_19-54-33-422.jpg")
 
@@ -669,7 +677,15 @@ class Images:
 
 	const Picsart25-04-2720-03-25-933Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-27_20-03-25-933.png")
 
-	const SelectIconImage: CompressedTexture2D = preload("res://assets/textures/select_icon.png")
+	const Picsart25-04-2921-22-20-237Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-29_21-22-20-237.png")
+
+	const Picsart25-04-2921-23-55-732Image: CompressedTexture2D = preload("res://assets/textures/Picsart_25-04-29_21-23-55-732.png")
+
+	const SlotImage: CompressedTexture2D = preload("res://assets/textures/slot.png")
+
+	const SlotemptyImage: CompressedTexture2D = preload("res://assets/textures/slotempty.png")
+
+	const SlotselectedImage: CompressedTexture2D = preload("res://assets/textures/slotselected.png")
 
 	const TitleImage: CompressedTexture2D = preload("res://assets/textures/title.png")
 

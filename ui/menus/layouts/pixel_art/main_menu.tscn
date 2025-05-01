@@ -61,9 +61,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -155.0
-offset_top = -19.0
+offset_top = -13.0
 offset_right = 164.0
-offset_bottom = 285.0
+offset_bottom = 291.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_bvnm3")
@@ -80,6 +80,7 @@ alignment = 1
 
 [node name="StartGameButton" type="Button" parent="MarginContainer/MainMenuButtons"]
 unique_name_in_owner = true
+show_behind_parent = true
 layout_mode = 2
 focus_neighbor_top = NodePath("../QuitGameButton")
 theme = ExtResource("2_bvnm3")

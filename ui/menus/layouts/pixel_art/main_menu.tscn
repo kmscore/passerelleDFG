@@ -67,10 +67,6 @@ offset_bottom = 291.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_bvnm3")
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 50
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -131,3 +127,4 @@ layout_mode = 1
 stream = ExtResource("10_g5i7s")
 autoplay = true
 bus = &"Music"
+parameters/looping = true

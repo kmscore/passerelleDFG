@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpfq6hyohmn57"
+path="res://.godot/imported/Juggernaut (PS1) OST - Forest - Eyes of Memory - Ninas Gramophone.mp3-28785d6da237900632e2ab23e4c6eb75.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/songs/Juggernaut (PS1) OST - Forest - Eyes of Memory - Ninas Gramophone.mp3"
+dest_files=["res://.godot/imported/Juggernaut (PS1) OST - Forest - Eyes of Memory - Ninas Gramophone.mp3-28785d6da237900632e2ab23e4c6eb75.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

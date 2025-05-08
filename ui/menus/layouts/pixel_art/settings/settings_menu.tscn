@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cjy60mv75hnb8"]
+[gd_scene load_steps=20 format=3 uid="uid://cjy60mv75hnb8"]
 
 [ext_resource type="Theme" uid="uid://cqccs7gpefk5s" path="res://assets/fonts/Font themes/Main_font.tres" id="1_43c2g"]
 [ext_resource type="Script" uid="uid://td52shgd71o2" path="res://ui/menus/layouts/pixel_art/settings/settings_menu.gd" id="1_ijo35"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c7xflsrumdoya" path="res://ui/menus/layouts/pixel_art/components/menu_back_button.gd" id="5_144fo"]
 [ext_resource type="Script" uid="uid://dadaarnbffwuu" path="res://ui/menus/layouts/pixel_art/button.gd" id="6_43c2g"]
 [ext_resource type="AudioStream" uid="uid://b4svfxoqkn2r4" path="res://assets/Audio/SE/427870__lavacoal123__mechanical-menu-button-press.wav" id="7_6faml"]
+[ext_resource type="FontFile" uid="uid://0hgq0fbdjqnb" path="res://assets/fonts/Shakespeare First Folio Font.otf" id="9_3j3s0"]
 [ext_resource type="PackedScene" uid="uid://g2lmd0sjdv3b" path="res://ui/menus/layouts/pixel_art/settings/display_settings_menu.tscn" id="9_qvtp0"]
 [ext_resource type="PackedScene" uid="uid://d3hipq38pqrtm" path="res://ui/menus/layouts/pixel_art/settings/audio_settings_menu.tscn" id="10_tfv4f"]
 [ext_resource type="PackedScene" uid="uid://dloly10h6i6tl" path="res://ui/menus/layouts/pixel_art/settings/accessibility_menu.tscn" id="11_iy83o"]
@@ -78,13 +79,15 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -150.0
-offset_top = 20.0
+offset_top = 23.0
 offset_right = 150.0
 offset_bottom = 70.0
 grow_horizontal = 2
 mouse_filter = 1
 
 [node name="Label" parent="MenuDisplayPanel" index="0"]
+theme_override_fonts/font = ExtResource("9_3j3s0")
+theme_override_font_sizes/font_size = 10
 text = "MENU SETTINGS"
 label_settings = null
 

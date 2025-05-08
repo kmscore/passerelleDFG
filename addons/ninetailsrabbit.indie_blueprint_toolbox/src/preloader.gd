@@ -1,6 +1,8 @@
 class_name IndieBlueprintPreloader
 
 class Scenes:
+	const IndustrialExteriorV2Scene: PackedScene = preload("res://assets/3d/industrial_exterior_v_2.tscn")
+
 	const GlobalEffectsScene: PackedScene = preload("res://autoload/effects/global_effects.tscn")
 
 	const DynamicScreenPointerScene: PackedScene = preload("res://autoload/screen/dynamic_screen_pointer.tscn")
@@ -41,9 +43,9 @@ class Scenes:
 
 	const InventoryScene: PackedScene = preload("res://scenes/InventorySystem/Inventory/inventory.tscn")
 
-	const InventoryfcélineScene: PackedScene = preload("res://scenes/InventorySystem/Inventory/inventoryfcéline.tscn")
-
 	const SlotScene: PackedScene = preload("res://scenes/InventorySystem/Inventory/slot.tscn")
+
+	const ActionableScene: PackedScene = preload("res://scenes/world/Dialogues/actionable.tscn")
 
 	const NpcScene: PackedScene = preload("res://scenes/world/npc.tscn")
 
@@ -274,9 +276,17 @@ class Scripts:
 
 	const ItemData = preload("res://scenes/InventorySystem/Item/item_data.gd")
 
+	const Actionable = preload("res://scenes/world/actionable.gd")
+
 	const Camera3d = preload("res://scenes/world/camera_3d.gd")
 
+	const InventoryInterface = preload("res://scenes/world/inventory_interface.gd")
+
+	const Main = preload("res://scenes/world/main.gd")
+
 	const Npc = preload("res://scenes/world/npc.gd")
+
+	const SpriteKeyE = preload("res://scenes/world/sprite_key_e.gd")
 
 	const ResizableNinepatchrect = preload("res://ui/components/ninepatchrect/resizable_ninepatchrect.gd")
 
@@ -381,6 +391,8 @@ class Scripts:
 	const PerformanceMetrics = preload("res://ui/performance/metrics/performance_metrics.gd")
 
 class Resources:
+	const BridgeResource: Resource = preload("res://assets/3d/Bridge.res")
+
 	const MainFontResource: Resource = preload("res://assets/fonts/Font themes/Main_font.tres")
 
 	const SimpleWaterResource: Resource = preload("res://assets/materials/water/simple/simple_water.tres")
@@ -491,6 +503,72 @@ class Shaders:
 	const VignetteShader: Shader = preload("res://shaders/vignette/vignette.gdshader")
 
 class Images:
+	const IndustrialExteriorV2Asphalt1-4Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Asphalt_1-4.png")
+
+	const IndustrialExteriorV2BagsImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Bags.png")
+
+	const IndustrialExteriorV2Barrel1Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Barrel_1.png")
+
+	const IndustrialExteriorV2Barrel2Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Barrel_2.png")
+
+	const IndustrialExteriorV2Barrel3Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Barrel_3.png")
+
+	const IndustrialExteriorV2BoxWoodImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Box_wood.png")
+
+	const IndustrialExteriorV2BridgesImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Bridges.png")
+
+	const IndustrialExteriorV2Building1Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Building_1.png")
+
+	const IndustrialExteriorV2Building13Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Building_13.png")
+
+	const IndustrialExteriorV2Building2Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Building_2.png")
+
+	const IndustrialExteriorV2Building3Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Building_3.png")
+
+	const IndustrialExteriorV2Building4Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Building_4.png")
+
+	const IndustrialExteriorV2Building5Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Building_5.png")
+
+	const IndustrialExteriorV2Building6Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Building_6.png")
+
+	const IndustrialExteriorV2Building7Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Building_7.png")
+
+	const IndustrialExteriorV2Cargo1Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Cargo_1.png")
+
+	const IndustrialExteriorV2Cargo2Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Cargo_2.png")
+
+	const IndustrialExteriorV2Cargo4Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Cargo_4.png")
+
+	const IndustrialExteriorV2ConcreteImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Concrete.png")
+
+	const IndustrialExteriorV2CoolingTowerImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Cooling_tower.png")
+
+	const IndustrialExteriorV2FenceImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Fence.png")
+
+	const IndustrialExteriorV2GeneratorImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Generator.png")
+
+	const IndustrialExteriorV2LiquidReservoir1Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Liquid_reservoir_1.png")
+
+	const IndustrialExteriorV2LiquidReservoir2Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Liquid_reservoir_2.png")
+
+	const IndustrialExteriorV2MetalCabinet1Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Metal_cabinet_1.png")
+
+	const IndustrialExteriorV2MetalCabinet2Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Metal_cabinet_2.png")
+
+	const IndustrialExteriorV2PaletImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Palet.png")
+
+	const IndustrialExteriorV2PipesImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Pipes.png")
+
+	const IndustrialExteriorV2RoadImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Road.png")
+
+	const IndustrialExteriorV2RoadblockImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Roadblock.png")
+
+	const IndustrialExteriorV2Ventilation1Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Ventilation_1.png")
+
+	const IndustrialExteriorV2Ventilation2Image: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Ventilation_2.png")
+
+	const IndustrialExteriorV2WallImage: CompressedTexture2D = preload("res://assets/3d/Industrial_exterior_v2_Wall.png")
+
 	const 1Image: CompressedTexture2D = preload("res://assets/characters/1.png")
 
 	const 2Image: CompressedTexture2D = preload("res://assets/characters/2.png")
@@ -512,6 +590,8 @@ class Images:
 	const IdleSpriteImage: CompressedTexture2D = preload("res://assets/characters/Idle sprite.png")
 
 	const PetscopPlayerImage: CompressedTexture2D = preload("res://assets/characters/petscop_player.png")
+
+	const RabbitImage: CompressedTexture2D = preload("res://assets/characters/rabbit.png")
 
 	const Leander-sampleImage: CompressedTexture2D = preload("res://assets/fonts/Leander-Sample.png")
 
@@ -683,6 +763,10 @@ class Images:
 
 	const BackroungblurrImage: CompressedTexture2D = preload("res://assets/textures/backroungblurr.jpg")
 
+	const DialogueBoxImage: CompressedTexture2D = preload("res://assets/textures/dialogue_box.png")
+
+	const EImage: CompressedTexture2D = preload("res://assets/textures/E.png")
+
 	const GroundImage: CompressedTexture2D = preload("res://assets/textures/ground.jpg")
 
 	const HealImage: CompressedTexture2D = preload("res://assets/textures/heal.png")
@@ -694,8 +778,6 @@ class Images:
 	const InventoryImage: CompressedTexture2D = preload("res://assets/textures/inventory.png")
 
 	const LabelImage: CompressedTexture2D = preload("res://assets/textures/label.png")
-
-	const O0020002011355326524Image: CompressedTexture2D = preload("res://assets/textures/o0020002011355326524.gif")
 
 	const Panel9Image: CompressedTexture2D = preload("res://assets/textures/panel9.png")
 
@@ -869,6 +951,8 @@ class Audios:
 	const 789771Dan2008Calm-menu-music-loopable-bitcrushedAudio: AudioStreamWAV = preload("res://assets/Audio/songs/789771__dan2008__calm-menu-music-loopable-bitcrushed.wav")
 
 	const Juggernaut(ps1)Ost-Cyberspace-InsuranceInvestigation-MrNAtasAudio: AudioStreamMP3 = preload("res://assets/Audio/songs/Juggernaut (PS1) OST - Cyberspace - Insurance Investigation - Mr. N. Atas.mp3")
+
+	const Juggernaut(ps1)Ost-Forest-EyesOfMemory-NinasGramophoneAudio: AudioStreamMP3 = preload("res://assets/Audio/songs/Juggernaut (PS1) OST - Forest - Eyes of Memory - Ninas Gramophone.mp3")
 
 	const PianoChopinPreludeOpus28No4Audio: AudioStreamMP3 = preload("res://assets/Audio/songs/Piano Chopin Prelude Opus 28 no. 4.mp3")
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://cose2vydp6e1q"]
+[gd_scene load_steps=28 format=3 uid="uid://cose2vydp6e1q"]
 
 [ext_resource type="Script" uid="uid://cr5diycjrhufp" path="res://components/motion/3D/third_person/third_person_controller.gd" id="1_y2iqo"]
+[ext_resource type="Resource" uid="uid://bb5sniduuq06p" path="res://scenes/InventorySystem/test_inv.tres" id="2_f0eqt"]
 [ext_resource type="Texture2D" uid="uid://dakjtrfu3yfm8" path="res://assets/characters/petscop_player.png" id="2_ly4lt"]
 [ext_resource type="Script" uid="uid://begt3gcweaksh" path="res://components/motion/3D/third_person/spring_arm_pivot.gd" id="2_oa4mc"]
 [ext_resource type="Script" uid="uid://cq0a178n01slj" path="res://components/camera/3D/shake/camera_shake_3d.gd" id="3_gu3wy"]
@@ -174,16 +175,22 @@ shader_parameter/emission = Color(0.817521, 0.817521, 0.817521, 1)
 shader_parameter/height_falloff = 0.0
 shader_parameter/edge_fade = 0.4
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f0eqt"]
+height = 0.679688
+radius = 0.653809
+
 [node name="ThirdPersonController" type="CharacterBody3D" node_paths=PackedStringArray("animated_sprite")]
 collision_layer = 2
 script = ExtResource("1_y2iqo")
+inventory_data = ExtResource("2_f0eqt")
 animated_sprite = NodePath("AnimatedSprite3D")
+jump_velocity = 5.0
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_4mqdg")
-animation = &"idle_front"
+animation = &"walk_back"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235336, 0)
@@ -212,6 +219,7 @@ script = ExtResource("3_gu3wy")
 metadata/_custom_type_script = "uid://cq0a178n01slj"
 
 [node name="ClickModeStateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+auto_translate_mode = 1
 script = ExtResource("4_5owuh")
 current_state = NodePath("ThirdPersonClickModeNeutralState")
 metadata/_custom_type_script = "uid://c0km5k3qx21va"
@@ -234,3 +242,11 @@ metadata/_custom_type_script = "uid://dntfxdw3e7d3p"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -285.653, 0)
 shape = 4
 material = SubResource("ShaderMaterial_f0eqt")
+
+[node name="ActionableFinder" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActionableFinder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.305664, 0)
+shape = SubResource("CylinderShape3D_f0eqt")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://jos3q0csyuoa"]
+[gd_scene load_steps=4 format=3 uid="uid://jos3q0csyuoa"]
 
 [ext_resource type="Script" uid="uid://3bskbtmv2601" path="res://scenes/InventorySystem/Inventory/slot.gd" id="1_mh1ng"]
+[ext_resource type="Texture2D" uid="uid://dfdhlgsdhi77c" path="res://assets/textures/slot.png" id="2_ldpmn"]
 [ext_resource type="FontFile" uid="uid://dxl7fsrj14rgi" path="res://assets/fonts/Essays1743-Italic.ttf" id="2_us4g5"]
 
 [node name="Slot" type="PanelContainer"]
@@ -13,6 +14,7 @@ script = ExtResource("1_mh1ng")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
+texture = ExtResource("2_ldpmn")
 expand_mode = 1
 stretch_mode = 5
 
@@ -25,3 +27,5 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_us4g5")
 text = "x99"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

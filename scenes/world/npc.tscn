@@ -1,30 +1,86 @@
-[gd_scene load_steps=5 format=3 uid="uid://buxwlfq130ybg"]
+[gd_scene load_steps=12 format=3 uid="uid://buxwlfq130ybg"]
 
 [ext_resource type="Script" uid="uid://clc4l8wap1cvi" path="res://scenes/world/npc.gd" id="1_1oqjc"]
-[ext_resource type="Texture2D" uid="uid://dwbl4rn3t47rr" path="res://assets/characters/Idle sprite.png" id="1_kmc6d"]
+[ext_resource type="Texture2D" uid="uid://bsfs6oaxarte4" path="res://assets/characters/rabbit.png" id="2_1oqjc"]
+[ext_resource type="PackedScene" uid="uid://c1a2gr70j1qyo" path="res://scenes/world/Dialogues/actionable.tscn" id="3_ts6vr"]
+[ext_resource type="Resource" uid="uid://1b2pm2p6ggtk" path="res://scenes/world/Dialogues/npc.dialogue" id="4_davfq"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_1oqjc"]
-height = 1.31775
-radius = 2.53711
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts6vr"]
+atlas = ExtResource("2_1oqjc")
+region = Rect2(1629, 0, 1629, 1629)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_davfq"]
+atlas = ExtResource("2_1oqjc")
+region = Rect2(0, 0, 1629, 1629)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcdfm"]
+atlas = ExtResource("2_1oqjc")
+region = Rect2(1629, 1629, 1629, 1629)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxqfp"]
+atlas = ExtResource("2_1oqjc")
+region = Rect2(0, 1629, 1629, 1629)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0x1my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts6vr")
+}],
+"loop": true,
+"name": &"idle_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_davfq")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcdfm")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxqfp")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kmc6d"]
-size = Vector3(0.500854, 1, 0.11084)
+size = Vector3(0.331146, 0.583984, 0.11084)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_davfq"]
+height = 1.07617
+radius = 1.61719
 
 [node name="NPC" type="CharacterBody3D"]
-collision_layer = 2
 script = ExtResource("1_1oqjc")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
-texture = ExtResource("1_kmc6d")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120117, 0)
-shape = SubResource("CylinderShape3D_1oqjc")
-debug_color = Color(0, 0.6, 0.701961, 1)
+sprite_frames = SubResource("SpriteFrames_0x1my")
+animation = &"idle_front"
 
 [node name="colision" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="colision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00860596, 0, 0.00317383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0433196, -0.0283203, 0.00317383)
 shape = SubResource("BoxShape3D_kmc6d")
+
+[node name="Actionable" parent="." instance=ExtResource("3_ts6vr")]
+collision_layer = 16
+dialogue_ressource = ExtResource("4_davfq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.248047, 0)
+shape = SubResource("CylinderShape3D_davfq")

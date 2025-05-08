@@ -1,36 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7x5g1yqaqlni"]
+[gd_scene load_steps=3 format=3 uid="uid://c7x5g1yqaqlni"]
 
-[ext_resource type="Texture2D" uid="uid://dfdhlgsdhi77c" path="res://assets/textures/slot.png" id="1_xfh4d"]
-[ext_resource type="Theme" uid="uid://cqccs7gpefk5s" path="res://assets/fonts/Font themes/Main_font.tres" id="2_ey1dm"]
+[ext_resource type="FontFile" uid="uid://0hgq0fbdjqnb" path="res://assets/fonts/Shakespeare First Folio Font.otf" id="2_ey1dm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5lvec"]
-font_size = 18
+font = ExtResource("2_ey1dm")
+font_size = 12
 font_color = Color(0.899258, 0.899258, 0.899258, 1)
-outline_size = 2
+outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="MenuDisplayPanel" type="NinePatchRect"]
 clip_contents = true
+offset_left = 1.0
+offset_top = 1.0
 offset_right = 300.0
-offset_bottom = 50.0
+offset_bottom = 79.0
 size_flags_vertical = 0
-texture = ExtResource("1_xfh4d")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = -9.5
-offset_right = 81.0
-offset_bottom = 9.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_ey1dm")
+anchors_preset = -1
+anchor_left = 0.221401
+anchor_top = 0.141026
+anchor_right = 0.277592
+anchor_bottom = 0.461538
+offset_left = -5.199
+offset_right = 162.0
+offset_bottom = 30.0
 text = "PANEL SELECT WORLD"
 label_settings = SubResource("LabelSettings_5lvec")
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+text_overrun_behavior = 2
+uppercase = true
 metadata/_edit_use_anchors_ = true

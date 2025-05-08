@@ -11,6 +11,6 @@ region = Rect2(0, 0, 1732, 1732)
 script = ExtResource("1_rta66")
 name = "heal"
 description = ""
-stackable = true
+stackable = false
 texture = SubResource("AtlasTexture_mhp78")
 metadata/_custom_type_script = "uid://dtejhecqo27s1"

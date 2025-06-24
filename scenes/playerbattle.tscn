@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://heb46cqs4uim"]
+
+[ext_resource type="Script" uid="uid://df8wk8ihbngo5" path="res://scenes/playerbattle.gd" id="1_khp8v"]
+[ext_resource type="Texture2D" uid="uid://30jrywacddpt" path="res://assets/characters/playerbattle.png" id="2_khp8v"]
+[ext_resource type="AudioStream" uid="uid://dgb81ekcxlsw3" path="res://assets/Audio/SE/aie.ogg" id="2_xcjpu"]
+[ext_resource type="Script" uid="uid://cqs7p8o1ms2f8" path="res://addons/ninetailsrabbit.indie_blueprint_rpg/src/health/health.gd" id="3_hqbr6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqbr6"]
+radius = 2.0
+height = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khp8v"]
+size = Vector2(15, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuqm1"]
+atlas = ExtResource("2_khp8v")
+region = Rect2(0, 0, 1086, 1833)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcjpu"]
+atlas = ExtResource("2_khp8v")
+region = Rect2(1086, 0, 1086, 1833)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqbr6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuqm1")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcjpu")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_khp8v")
+damaged_sound = ExtResource("2_xcjpu")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("3_hqbr6")
+current_health = 100
+metadata/_custom_type_script = "uid://cqs7p8o1ms2f8"
+
+[node name="Hitbox" type="Area2D" parent="." groups=["player_hitbox"]]
+collision_layer = 128
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_hqbr6")
+debug_color = Color(0.840405, 0.197274, 0.805285, 0.42)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -4)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_khp8v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.616235, -5.40825)
+scale = Vector2(0.0109058, 0.0126369)
+sprite_frames = SubResource("SpriteFrames_hqbr6")
+animation = &"left"

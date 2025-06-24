@@ -1,59 +1,120 @@
-[gd_scene load_steps=10 format=3 uid="uid://bu1naq7bgris4"]
+[gd_scene load_steps=25 format=3 uid="uid://bu1naq7bgris4"]
 
-[ext_resource type="Texture2D" uid="uid://dsr6djuhmuhp5" path="res://assets/textures/Picsart_25-04-23_22-14-22-988.jpg" id="1_sl2e5"]
+[ext_resource type="Script" uid="uid://csquym2akbi8b" path="res://scenes/world/main.gd" id="1_bq33v"]
+[ext_resource type="AudioStream" uid="uid://bcemckl4mt182" path="res://assets/Audio/SE/spawn1.wav" id="2_71ii3"]
 [ext_resource type="PackedScene" uid="uid://cose2vydp6e1q" path="res://components/motion/3D/third_person/third_person_controller.tscn" id="2_sl2e5"]
 [ext_resource type="PackedScene" uid="uid://buxwlfq130ybg" path="res://scenes/world/npc.tscn" id="3_1fp7r"]
-[ext_resource type="Texture2D" uid="uid://gfibodj20gmk" path="res://assets/textures/Picsart_25-04-24_23-32-03-748.png" id="4_6m72w"]
+[ext_resource type="AudioStream" uid="uid://m5ngov5wqore" path="res://assets/Audio/SE/end_dialogue.mp3" id="3_tytul"]
+[ext_resource type="Texture2D" uid="uid://bvuyaaqmrv6kw" path="res://assets/textures/questionmark.png" id="4_6m72w"]
+[ext_resource type="AudioStream" uid="uid://c3w5yuaik4aia" path="res://assets/Audio/SE/213446__taira-komori__packun_eating.mp3" id="5_dlabj"]
+[ext_resource type="AudioStream" uid="uid://b7hjhparj8wgj" path="res://assets/Audio/SE/footsteps (mp3cut.net).mp3" id="5_srmg5"]
 [ext_resource type="PackedScene" uid="uid://ckmpartbateng" path="res://ui/menus/layouts/pixel_art/pause_menu.tscn" id="5_v5dby"]
+[ext_resource type="Texture2D" uid="uid://bobsb403gk1od" path="res://assets/characters/yajekoria.png" id="6_6hctx"]
+[ext_resource type="PackedScene" uid="uid://cddww6s4cdnxv" path="res://scenes/InventorySystem/Inventory/inventory.tscn" id="6_t5ptc"]
+[ext_resource type="Script" uid="uid://cu8i385qse0a" path="res://scenes/world/inventory_interface.gd" id="7_j2gmx"]
+[ext_resource type="Environment" uid="uid://qar0k31jbp6i" path="res://scenes/world/world.tres" id="7_umvgx"]
+[ext_resource type="CameraAttributesPractical" uid="uid://bpw2hyongl5lh" path="res://scenes/world/pause_camera.tres" id="10_tytul"]
+[ext_resource type="Script" uid="uid://cg5iv7qofxmsg" path="res://scenes/world/world_environment.gd" id="10_wbwoo"]
+[ext_resource type="Environment" uid="uid://crr8perxcl6r" path="res://scenes/world/pause_envirronement.tres" id="11_tytul"]
+[ext_resource type="AudioStream" uid="uid://dxvda0gk5p162" path="res://assets/Audio/songs/World.mp3" id="17_6hctx"]
+[ext_resource type="PackedScene" uid="uid://6awvkt5tx7rl" path="res://scenes/hospital.tscn" id="19_tytul"]
+[ext_resource type="PackedScene" uid="uid://0bg4xo4qcf70" path="res://scenes/map.tscn" id="19_wbwoo"]
+[ext_resource type="PackedScene" uid="uid://kuiel1ju78yo" path="res://scenes/battlestart.tscn" id="20_t634p"]
+[ext_resource type="PackedScene" uid="uid://t4s1071k3gia" path="res://scenes/world/npc2.tscn" id="21_t634p"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_sl2e5"]
-size = Vector3(1, 0.001, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ues17"]
+size = Vector3(1, 1.37024, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1fp7r"]
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_t634p"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6m72w"]
-albedo_texture = ExtResource("1_sl2e5")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_triplanar = true
-uv1_world_triplanar = true
-
-[sub_resource type="Environment" id="Environment_sl2e5"]
-background_mode = 1
-background_color = Color(0.95158, 0.95158, 0.95158, 1)
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
+[sub_resource type="FogMaterial" id="FogMaterial_1yooq"]
+density = 8.0
+albedo = Color(0, 0, 0, 1)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_bq33v")
+spawn_audio = ExtResource("2_71ii3")
+end_dialogue_audio = ExtResource("3_tytul")
 
-[node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24, 0)
+[node name="BattleArea" parent="." instance=ExtResource("20_t634p")]
+collision_layer = 32
+collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, -0.6, 0)
-shape = SubResource("BoxShape3D_sl2e5")
-debug_color = Color(0.392157, 0.427451, 0.984314, 1)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BattleArea"]
+transform = Transform3D(-0.836286, 0, -0.548293, 0, 1, 0, 0.548293, 0, -0.836286, -1.76388, 0.18512, -14.7624)
+shape = SubResource("BoxShape3D_ues17")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -0.101, 0)
-mesh = SubResource("PlaneMesh_1fp7r")
-surface_material_override/0 = SubResource("StandardMaterial3D_6m72w")
+[node name="Sprite3D" type="Sprite3D" parent="BattleArea"]
+transform = Transform3D(0.716619, 0, 0.697466, 0, 1, 0, -0.697466, 0, 0.716619, -1.76388, 0.534193, -14.7624)
+pixel_size = 0.0005
+texture = ExtResource("6_6hctx")
 
-[node name="ThirdPersonController" parent="." instance=ExtResource("2_sl2e5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.350091, 0)
+[node name="NPC" parent="." instance=ExtResource("3_1fp7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.39943, 0, 4.54069)
+
+[node name="ThirdPersonController" parent="." groups=["Player"] instance=ExtResource("2_sl2e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85533, 0.175348, -91.1316)
+jump_velocity = 6.0
+footstep_sound = ExtResource("5_srmg5")
+jump_sound = ExtResource("5_dlabj")
+
+[node name="NPC2" parent="." instance=ExtResource("21_t634p")]
+transform = Transform3D(0.201933, 0, -0.979399, 0, 1, 0, 0.979399, 0, 0.201933, -1.77914, 0.311948, -4.00957)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_sl2e5")
+environment = ExtResource("7_umvgx")
+camera_attributes = SubResource("CameraAttributesPractical_t634p")
+script = ExtResource("10_wbwoo")
+pause_menu_path = NodePath("../PauseMenu")
+pause_environment = ExtResource("11_tytul")
+pause_blur_attributes = ExtResource("10_tytul")
 
-[node name="Node3D" parent="." instance=ExtResource("3_1fp7r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.644825, 0.15211, -5.39981)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25687, 3.86908, 14.4442)
+light_color = Color(0.286354, 0, 0.0284614, 1)
+
+[node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -11.5245, 0)
+material = SubResource("FogMaterial_1yooq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.666667, 0.666667)
 texture = ExtResource("4_6m72w")
 centered = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_6hctx")
 autoplay = true
 bus = &"Music"
+parameters/looping = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_v5dby")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_j2gmx")
+
+[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("6_t5ptc")]
+layout_mode = 0
+
+[node name="Map" parent="." instance=ExtResource("19_wbwoo")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.277918, -0.131635, 0.951543, -0.11878, 0.987674, 0.101941, -0.953233, -0.0846928, -0.290128, -39.6166, 187.751, -71.7474)
+light_color = Color(0.3192, 0.34104, 0.42, 1)
+light_energy = 7.755
+
+[node name="Hospital" parent="." instance=ExtResource("19_tytul")]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0, -0.199123, -95.1373)

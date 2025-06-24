@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bkhumb8jehx2k"]
+
+[ext_resource type="Texture2D" uid="uid://cqb7thjp477tc" path="res://assets/3d/aaron_capsule_0.png" id="1_73580"]
+[ext_resource type="Texture2D" uid="uid://cv2cqbwe4et13" path="res://assets/3d/aaron_capsule_1.png" id="2_8xs8s"]
+[ext_resource type="Texture2D" uid="uid://ddfbmqsc31bt7" path="res://assets/3d/aaron_capsule_2.png" id="3_uy5wm"]
+[ext_resource type="Texture2D" uid="uid://rt1w0kvhgddb" path="res://assets/3d/aaron_capsule_3.png" id="4_kn0vo"]
+
+[resource]
+resource_name = "lambert1"
+cull_mode = 2
+albedo_color = Color(0.52, 0.4472, 0.448413, 1)
+albedo_texture = ExtResource("1_73580")
+metallic = 1.0
+metallic_texture = ExtResource("2_8xs8s")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_8xs8s")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("3_uy5wm")
+normal_enabled = true
+normal_texture = ExtResource("4_kn0vo")
+ao_enabled = true
+ao_texture = ExtResource("2_8xs8s")

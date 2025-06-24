@@ -1,0 +1,110 @@
+[gd_scene load_steps=15 format=3 uid="uid://t4s1071k3gia"]
+
+[ext_resource type="Script" uid="uid://clc4l8wap1cvi" path="res://scenes/world/npc.gd" id="1_col5s"]
+[ext_resource type="Texture2D" uid="uid://dmixcelq30puj" path="res://assets/characters/littlesister.png" id="2_col5s"]
+[ext_resource type="PackedScene" uid="uid://c1a2gr70j1qyo" path="res://scenes/world/Dialogues/actionable.tscn" id="3_lsfup"]
+[ext_resource type="Resource" uid="uid://dhcynksrfibrl" path="res://scenes/world/Dialogues/Vatya.dialogue" id="4_aj7vw"]
+[ext_resource type="Texture2D" uid="uid://bvuyaaqmrv6kw" path="res://assets/textures/questionmark.png" id="5_aj7vw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj7vw"]
+atlas = ExtResource("2_col5s")
+region = Rect2(48, 240, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsfup"]
+atlas = ExtResource("2_col5s")
+region = Rect2(48, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alyc3"]
+atlas = ExtResource("2_col5s")
+region = Rect2(48, 160, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wcbp"]
+atlas = ExtResource("2_col5s")
+region = Rect2(48, 80, 48, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0x1my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj7vw")
+}],
+"loop": true,
+"name": &"idle_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsfup")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alyc3")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wcbp")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_col5s"]
+height = 1.14746
+radius = 0.136719
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_davfq"]
+height = 1.31641
+radius = 0.755859
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xqye"]
+atlas = ExtResource("5_aj7vw")
+region = Rect2(0, 0, 3259, 3259)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r21gl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xqye")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NPC" type="CharacterBody3D" node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("1_col5s")
+animated_sprite = NodePath("AnimatedSprite3D")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+pixel_size = 0.4
+sprite_frames = SubResource("SpriteFrames_0x1my")
+animation = &"idle_right"
+
+[node name="colision" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="colision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0433196, 0.0327149, 0.00317383)
+shape = SubResource("CylinderShape3D_col5s")
+
+[node name="Actionable" parent="." instance=ExtResource("3_lsfup")]
+collision_layer = 16
+dialogue_ressource = ExtResource("4_aj7vw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.127929, 0)
+shape = SubResource("CylinderShape3D_davfq")
+
+[node name="InteractionMarker" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362826, 0.555589, 0.0048708)
+pixel_size = 0.0003
+sprite_frames = SubResource("SpriteFrames_r21gl")

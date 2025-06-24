@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://i0ce3rqv4hx2"]
+
+[ext_resource type="Script" uid="uid://pigi8l56vwsk" path="res://scenes/projectile.gd" id="1_q3m7n"]
+[ext_resource type="Texture2D" uid="uid://bhqsq1l3vu5m6" path="res://assets/textures/arrow.png" id="2_softn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q2a6"]
+size = Vector2(5.00005, 37)
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 8
+collision_mask = 128
+script = ExtResource("1_q3m7n")
+speed = 500.0
+rotation_speed = 20.0
+rotation_falloff = 10.0
+final_rotation_speed = 4.0
+pullback_distance = 50.0
+pullback_time = 0.7
+fade_speed = 0.4
+slowdown_curve_sharpness = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, -4.61853e-14)
+rotation = 1.5708
+scale = Vector2(0.0166878, 0.0167597)
+texture = ExtResource("2_softn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 0)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_6q2a6")
+debug_color = Color(0.76154, 0.261091, 0.90695, 0.42)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

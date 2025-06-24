@@ -842,7 +842,6 @@ func _set_state_value(property: String, value, extra_game_states: Array) -> void
 	else:
 		show_error_for_missing_state_value(DMConstants.translate(&"runtime.property_not_found").format({ property = property, states = _get_state_shortcut_names(extra_game_states) }))
 
-
 # Get the list of state shortcut names
 func _get_state_shortcut_names(extra_game_states: Array) -> String:
 	var states = _get_game_states(extra_game_states)

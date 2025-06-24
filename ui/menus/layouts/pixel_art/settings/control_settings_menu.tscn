@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://k6jdunvu56uj"]
+[gd_scene load_steps=8 format=3 uid="uid://k6jdunvu56uj"]
 
 [ext_resource type="FontFile" uid="uid://due85r8gmivst" path="res://ui/menus/layouts/pixel_art/theme/fonts/ark_pixel/ark-pixel-10px-monospaced-latin.otf" id="1_avr1h"]
 [ext_resource type="Script" uid="uid://dgjkur7tqncp4" path="res://ui/menus/components/label/project_version.gd" id="2_0nr13"]
 [ext_resource type="Texture2D" uid="uid://1pdniev668cm" path="res://assets/geometry/arrows/medium_left.png" id="3_u1qpr"]
 [ext_resource type="Script" uid="uid://c7xflsrumdoya" path="res://ui/menus/layouts/pixel_art/components/menu_back_button.gd" id="4_f6134"]
 [ext_resource type="AudioStream" uid="uid://b4svfxoqkn2r4" path="res://assets/Audio/SE/427870__lavacoal123__mechanical-menu-button-press.wav" id="5_4body"]
-[ext_resource type="PackedScene" uid="uid://c7x5g1yqaqlni" path="res://ui/menus/layouts/pixel_art/components/menu_display_panel.tscn" id="5_jvsoj"]
 [ext_resource type="PackedScene" uid="uid://bs4y3s4v0is47" path="res://ui/menus/components/panel/input_remap_panel.tscn" id="6_slxey"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l83yp"]
@@ -60,21 +59,6 @@ script = ExtResource("4_f6134")
 linked_menu = NodePath("../..")
 sound_effect = ExtResource("5_4body")
 
-[node name="MenuDisplayPanel" parent="." instance=ExtResource("5_jvsoj")]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -150.0
-offset_top = 20.0
-offset_right = 150.0
-offset_bottom = 70.0
-grow_horizontal = 2
-mouse_filter = 1
-
-[node name="Label" parent="MenuDisplayPanel" index="0"]
-text = "MENU_CONTROL_SETTINGS"
-
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -96,5 +80,3 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 exclude_actions = Array[String](["crouch", "crawl", "run", "jump", "pull", "pull_area", "drop", "throw", "push_wave", "aim", "shoot", "primary_weapon", "secondary_weapon", "heavy_weapon", "melee_weapon", "climb_ladder", "vehicle_accelerate", "vehicle_reverse_accelerate", "vehicle_steer_right", "vehicle_steer_left", "vehicle_hand_brake", "start_vehicle_engine", "stop_driving_boat", "grenade"])
-
-[editable path="MenuDisplayPanel"]

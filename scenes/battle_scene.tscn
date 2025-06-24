@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1krdmg7lhctf"]
+
+[ext_resource type="Script" uid="uid://ca6gf7k5vy062" path="res://scenes/battle_scene.gd" id="1_1i8jf"]
+[ext_resource type="Texture2D" uid="uid://r3evw62hgrfv" path="res://assets/textures/battle.jpg" id="1_pxwbd"]
+[ext_resource type="PackedScene" uid="uid://i0ce3rqv4hx2" path="res://scenes/projectile.tscn" id="2_kinr6"]
+[ext_resource type="PackedScene" uid="uid://dfoa2monewma1" path="res://scenes/AttackScene.tscn" id="3_svpld"]
+[ext_resource type="PackedScene" uid="uid://ntiluou0bs8h" path="res://ui/menus/layouts/pixel_art/main_menu.tscn" id="4_rum4d"]
+[ext_resource type="AudioStream" uid="uid://dkn7rtegsvsls" path="res://assets/Audio/songs/battle.mp3" id="6_rum4d"]
+[ext_resource type="PackedScene" uid="uid://heb46cqs4uim" path="res://scenes/playerbattle.tscn" id="6_svpld"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kinr6"]
+b = Vector2(4.00001, 315)
+
+[node name="BattleScene" type="Node2D" node_paths=PackedStringArray("target", "player")]
+script = ExtResource("1_1i8jf")
+projectile_scene = ExtResource("2_kinr6")
+spawn_interval = 2.0
+projectile_lifetime = 10.0
+target = NodePath("Player")
+player = NodePath("Player")
+attack_scene = ExtResource("3_svpld")
+game_over_scene = ExtResource("4_rum4d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(213, 120)
+scale = Vector2(0.221991, 0.222222)
+texture = ExtResource("1_pxwbd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(9, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_kinr6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(315, -3)
+shape = SubResource("SegmentShape2D_kinr6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(315, -3)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_kinr6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(316, 162)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_kinr6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rum4d")
+volume_db = -13.189
+autoplay = true
+bus = &"Music"
+
+[node name="Player" parent="." instance=ExtResource("6_svpld")]
+position = Vector2(113, 72)
+scale = Vector2(2, 2)

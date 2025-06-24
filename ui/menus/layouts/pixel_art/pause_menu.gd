@@ -1,6 +1,9 @@
 class_name PauseMenu
 extends Control
 
+signal pause_menu_opened
+signal pause_menu_closed
+
 @export var open_input_action: StringName = InputControls.PauseGame
 
 @onready var back_button: MenuBackButton = %BackButton
@@ -42,31 +45,38 @@ func _unhandled_input(_event: InputEvent) -> void:
 func initialize_positions():
 	if positions_initialized:
 		return
-	await get_tree().physics_frame  # Attend un frame pour être sûr que rect_size est bon
+	await get_tree().physics_frame
 	shown_position = Vector2(0, 0)
-	hidden_position = Vector2(-size.x, 0)  # size au lieu de rect_size
+	hidden_position = Vector2(-size.x, 0)
 	position = hidden_position
 	positions_initialized = true
 
 func slide_in() -> void:
 	initialize_positions()
 	show()
+	emit_signal("pause_menu_opened")
 	get_tree().paused = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	tween = create_tween()
 	tween.tween_property(self, "position", shown_position, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	settings_button.grab_focus()
 
 func slide_out() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	tween = create_tween()
 	tween.tween_property(self, "position", hidden_position, 0.3).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	tween.finished.connect(func():
 		hide()
 		get_tree().paused = false
+		emit_signal("pause_menu_closed")
 	)
 
 func on_pause_menu_visibility_changed() -> void:
 	if visible:
 		settings_button.grab_focus()
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		get_tree().paused = false
 
 func on_loaded_savegame(saved_game: IndieBlueprintSavedGame) -> void:
 	save_name_label.text = saved_game.display_name

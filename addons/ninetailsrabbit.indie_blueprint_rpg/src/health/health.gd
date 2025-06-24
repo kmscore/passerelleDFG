@@ -58,6 +58,7 @@ func damage(amount: int):
 	
 	amount = absi(amount)
 	current_health = max(0, current_health - amount)
+	print("Dégâts reçus :") 
 	
 	health_changed.emit(amount, Types.Damage)
 

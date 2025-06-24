@@ -1,0 +1,72 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://p45mvedq0t5b"
+path="res://.godot/imported/pipe_metalic_metal_-_14mb.glb-55789f9984997580e3dbf2b691e67acf.scn"
+
+[deps]
+
+source_file="res://assets/3d/pipe_metalic_metal_-_14mb.glb"
+dest_files=["res://.godot/imported/pipe_metalic_metal_-_14mb.glb-55789f9984997580e3dbf2b691e67acf.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/525736075a8a44acb802b8f672826cc9_fbx/RootNode/01/01_01_0": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Sketchfab_model/525736075a8a44acb802b8f672826cc9_fbx/RootNode/02/02_01_0": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Sketchfab_model/525736075a8a44acb802b8f672826cc9_fbx/RootNode/03/03_01_0": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Sketchfab_model/525736075a8a44acb802b8f672826cc9_fbx/RootNode/04/04_01_0": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Sketchfab_model/525736075a8a44acb802b8f672826cc9_fbx/RootNode/05/05_01_0": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Sketchfab_model/525736075a8a44acb802b8f672826cc9_fbx/RootNode/06/06_01_0": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Sketchfab_model/525736075a8a44acb802b8f672826cc9_fbx/RootNode/07/07_01_0": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Sketchfab_model/525736075a8a44acb802b8f672826cc9_fbx/RootNode/08/08_01_0": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

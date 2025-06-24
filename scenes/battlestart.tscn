@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://kuiel1ju78yo"]
+
+[ext_resource type="Script" uid="uid://xyox2g646mpb" path="res://battle.gd" id="1_py4r4"]
+
+[node name="battlestart" type="Area3D"]
+script = ExtResource("1_py4r4")

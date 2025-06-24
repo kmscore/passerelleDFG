@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckmpartbateng"]
+[gd_scene load_steps=14 format=3 uid="uid://ckmpartbateng"]
 
 [ext_resource type="Script" uid="uid://cyn7dpb1i7dal" path="res://ui/menus/layouts/pixel_art/pause_menu.gd" id="1_ge1r7"]
 [ext_resource type="Theme" uid="uid://c6o5sbust8emw" path="res://ui/menus/layouts/pixel_art/theme/ui_theme.tres" id="2_4hnh5"]
-[ext_resource type="Texture2D" uid="uid://3ime8sm87njg" path="res://assets/textures/Picsart_25-04-26_22-17-05-895.png" id="2_7hcjs"]
+[ext_resource type="Texture2D" uid="uid://dy2untujy6r5n" path="res://assets/textures/pausemenu.png" id="2_bfm5l"]
 [ext_resource type="Theme" uid="uid://cqccs7gpefk5s" path="res://assets/fonts/Font themes/Main_font.tres" id="2_ofqna"]
-[ext_resource type="PackedScene" uid="uid://c7x5g1yqaqlni" path="res://ui/menus/layouts/pixel_art/components/menu_display_panel.tscn" id="3_q7u3i"]
 [ext_resource type="Script" uid="uid://dgjkur7tqncp4" path="res://ui/menus/components/label/project_version.gd" id="5_dkc40"]
 [ext_resource type="Texture2D" uid="uid://1pdniev668cm" path="res://assets/geometry/arrows/medium_left.png" id="5_osjm4"]
 [ext_resource type="Script" uid="uid://c7xflsrumdoya" path="res://ui/menus/layouts/pixel_art/components/menu_back_button.gd" id="6_8o6xi"]
 [ext_resource type="PackedScene" uid="uid://cjy60mv75hnb8" path="res://ui/menus/layouts/pixel_art/settings/settings_menu.tscn" id="8_cicu4"]
+[ext_resource type="Script" uid="uid://dadaarnbffwuu" path="res://ui/menus/layouts/pixel_art/button.gd" id="9_48r77"]
+[ext_resource type="Script" uid="uid://b5ou2c52dpjej" path="res://ui/menus/layouts/pixel_art/quit_game_button.gd" id="10_bfm5l"]
+[ext_resource type="AudioStream" uid="uid://cv7v1fyc6ancx" path="res://assets/Audio/SE/150214__pumodi__menu-move-2.mp3" id="11_tha5x"]
+[ext_resource type="AudioStream" uid="uid://b7nksrxl052nv" path="res://assets/Audio/SE/571579__el_boss__metallic-game-menu-ping-variation-2.wav" id="12_harem"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s4jf2"]
 font_color = Color(0.419813, 0.419813, 0.419813, 1)
@@ -19,22 +22,26 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -729.0
+offset_left = -0.5
+offset_right = -426.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_ge1r7")
 
 [node name="TemporaryBackground" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_top = 0.912
 anchor_bottom = 1.0
-offset_right = 701.0
+offset_top = -217.88
+offset_right = 428.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_7hcjs")
+texture = ExtResource("2_bfm5l")
 expand_mode = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
@@ -42,6 +49,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -35.5
+offset_right = 119.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 30
@@ -83,29 +92,18 @@ icon = ExtResource("5_osjm4")
 script = ExtResource("6_8o6xi")
 linked_menu = NodePath("../..")
 
-[node name="MenuDisplayPanel" parent="." instance=ExtResource("3_q7u3i")]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -150.0
-offset_top = 20.0
-offset_right = 150.0
-offset_bottom = 70.0
-grow_horizontal = 2
-mouse_filter = 1
-
-[node name="Label" parent="MenuDisplayPanel" index="0"]
-text = "PANEL_PAUSE_MENU"
-
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -33.0
+offset_right = 130.0
+offset_bottom = 93.0
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("2_ofqna")
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
@@ -119,22 +117,36 @@ theme_override_constants/separation = 10
 
 [node name="SettingsButton" type="Button" parent="MarginContainer/MainMenuButtons"]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 2
 size_flags_horizontal = 0
 focus_neighbor_top = NodePath("../QuitGameButton")
 theme = ExtResource("2_ofqna")
 text = "SETTINGS"
+flat = true
+script = ExtResource("9_48r77")
+
+[node name="MainmeniButton" type="Button" parent="MarginContainer/MainMenuButtons"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+text = "Main Menu"
+flat = true
+script = ExtResource("9_48r77")
+sound_effect = ExtResource("11_tha5x")
+hover_sound_effect = ExtResource("12_harem")
 
 [node name="QuitGameButton" type="Button" parent="MarginContainer/MainMenuButtons"]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 2
 size_flags_horizontal = 0
 focus_neighbor_bottom = NodePath("../SettingsButton")
 theme = ExtResource("2_ofqna")
 text = "LEAVE"
+flat = true
+script = ExtResource("10_bfm5l")
 
 [node name="SettingsMenu" parent="." instance=ExtResource("8_cicu4")]
 visible = false
 layout_mode = 1
-
-[editable path="MenuDisplayPanel"]

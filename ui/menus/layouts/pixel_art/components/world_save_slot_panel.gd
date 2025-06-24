@@ -55,8 +55,7 @@ func on_gui_input_save_slot_panel(event: InputEvent) -> void:
 		selected.emit()
 
 func on_save_slot_focused() -> void:
-	var focus_theme_stylebox = world_save_slot_panel.get_theme_stylebox("panel").duplicate()
-	focus_theme_stylebox.border_color = Color("a4a4a4")
+	var focus_theme_stylebox := StyleBoxFlat.new()
 	focus_theme_stylebox.border_width_bottom = 2
 	focus_theme_stylebox.border_width_top = 2
 	focus_theme_stylebox.border_width_left = 2

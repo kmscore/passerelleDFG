@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://kuwigbsyeyod"]
+
+[ext_resource type="Texture2D" uid="uid://bnppvxoe2ah14" path="res://assets/characters/céline.png" id="2_0it5j"]
+[ext_resource type="PackedScene" uid="uid://c1a2gr70j1qyo" path="res://scenes/world/Dialogues/actionable.tscn" id="3_k7vun"]
+[ext_resource type="Resource" uid="uid://dhcynksrfibrl" path="res://scenes/world/Dialogues/Vatya.dialogue" id="4_0it5j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64wop"]
+atlas = ExtResource("2_0it5j")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0x1my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64wop")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kmc6d"]
+size = Vector3(0.331146, 0.583984, 0.11084)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_davfq"]
+height = 1.07617
+radius = 0.728516
+
+[node name="céline" type="CharacterBody3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_0x1my")
+animation = &"idle_front"
+
+[node name="colision" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="colision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0433196, -0.0283203, 0.00317383)
+shape = SubResource("BoxShape3D_kmc6d")
+
+[node name="Actionable" parent="." instance=ExtResource("3_k7vun")]
+collision_layer = 16
+dialogue_ressource = ExtResource("4_0it5j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0469069, 0)
+shape = SubResource("CylinderShape3D_davfq")

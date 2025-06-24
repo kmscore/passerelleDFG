@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3hipq38pqrtm"]
+[gd_scene load_steps=12 format=3 uid="uid://d3hipq38pqrtm"]
 
 [ext_resource type="Script" uid="uid://dyxss6qq0glya" path="res://ui/menus/layouts/pixel_art/settings/display_settings_menu.gd" id="1_o1mgi"]
 [ext_resource type="FontFile" uid="uid://due85r8gmivst" path="res://ui/menus/layouts/pixel_art/theme/fonts/ark_pixel/ark-pixel-10px-monospaced-latin.otf" id="2_k12hc"]
@@ -6,7 +6,6 @@
 [ext_resource type="Theme" uid="uid://c6o5sbust8emw" path="res://ui/menus/layouts/pixel_art/theme/ui_theme.tres" id="3_r5x0d"]
 [ext_resource type="Texture2D" uid="uid://1pdniev668cm" path="res://assets/geometry/arrows/medium_left.png" id="4_5icbl"]
 [ext_resource type="Script" uid="uid://c7xflsrumdoya" path="res://ui/menus/layouts/pixel_art/components/menu_back_button.gd" id="5_l7urq"]
-[ext_resource type="PackedScene" uid="uid://c7x5g1yqaqlni" path="res://ui/menus/layouts/pixel_art/components/menu_display_panel.tscn" id="6_l6c6r"]
 [ext_resource type="LabelSettings" uid="uid://2eihg2k5xqp6" path="res://ui/menus/layouts/pixel_art/theme/label_configurations/menu_settings_label.tres" id="7_8rgvm"]
 [ext_resource type="Script" uid="uid://bffv757ku5jsw" path="res://ui/menus/components/slider/audio_slider.gd" id="7_diaon"]
 [ext_resource type="AudioStream" uid="uid://b4svfxoqkn2r4" path="res://assets/Audio/SE/427870__lavacoal123__mechanical-menu-button-press.wav" id="7_k35ln"]
@@ -65,21 +64,6 @@ icon = ExtResource("4_5icbl")
 script = ExtResource("5_l7urq")
 linked_menu = NodePath("../..")
 sound_effect = ExtResource("7_k35ln")
-
-[node name="MenuDisplayPanel" parent="." instance=ExtResource("6_l6c6r")]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -150.0
-offset_top = 20.0
-offset_right = 150.0
-offset_bottom = 70.0
-grow_horizontal = 2
-mouse_filter = 1
-
-[node name="Label" parent="MenuDisplayPanel" index="0"]
-text = "MENU_AUDIO_SETTINGS"
 
 [node name="SettingsMarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -194,5 +178,3 @@ label_settings = ExtResource("7_8rgvm")
 [node name="MutedAudioCheckbox" type="CheckBox" parent="SettingsMarginContainer/VBoxContainer/HBoxContainer6"]
 layout_mode = 2
 script = ExtResource("9_d44pt")
-
-[editable path="MenuDisplayPanel"]

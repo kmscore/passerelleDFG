@@ -1,0 +1,44 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://s8xrppo0usu8"
+path="res://.godot/imported/free_eldritch_horror_inspired_creature.glb-2ff6f56caf5d1ddc9d99dbcf535b0714.scn"
+
+[deps]
+
+source_file="res://assets/3d/free_eldritch_horror_inspired_creature.glb"
+dest_files=["res://.godot/imported/free_eldritch_horror_inspired_creature.glb-2ff6f56caf5d1ddc9d99dbcf535b0714.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/eldritch_horror_H_R_Gigerr_creature_0615040604_refine_fbx/RootNode/Mesh_0/Mesh_0_Material_0_0": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

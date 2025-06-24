@@ -1,0 +1,9 @@
+~ start
+Plush: Oh, hey there. Didn't expect company.
+- hey what's up
+	Celine: hey what's up
+	Plush: meow meow
+	=> END!
+- no
+	Celine: no
+=> END!

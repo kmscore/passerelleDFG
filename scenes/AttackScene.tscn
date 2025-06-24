@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfoa2monewma1"]
+
+[ext_resource type="Script" uid="uid://ntdv3d6kv33m" path="res://scenes/AttackScene.gd" id="1_stgin"]
+[ext_resource type="PackedScene" uid="uid://cadbm74anfb8m" path="res://scenes/HitCircle.tscn" id="3_6n7ec"]
+[ext_resource type="Texture2D" uid="uid://bnum5ckhk5djv" path="res://assets/textures/attackscene.jpg" id="3_qevbw"]
+[ext_resource type="Script" uid="uid://cqs7p8o1ms2f8" path="res://addons/ninetailsrabbit.indie_blueprint_rpg/src/health/health.gd" id="4_2ulps"]
+[ext_resource type="AudioStream" uid="uid://ckbttu81im3l8" path="res://assets/Audio/songs/Attack.mp3" id="5_6n7ec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6n7ec"]
+size = Vector2(297, 164)
+
+[node name="AttackScene" type="Node2D" node_paths=PackedStringArray("health_component")]
+script = ExtResource("1_stgin")
+hit_circle_scene = ExtResource("3_6n7ec")
+damage_amount = 60
+health_component = NodePath("Enemy/IndieBlueprintHealth")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(213, 120)
+scale = Vector2(0.221991, 0.222222)
+texture = ExtResource("3_qevbw")
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="IndieBlueprintHealth" type="Node" parent="Enemy"]
+script = ExtResource("4_2ulps")
+current_health = 100
+metadata/_custom_type_script = "uid://cqs7p8o1ms2f8"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6n7ec")
+autoplay = true
+bus = &"Music"
+
+[node name="SpawnArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
+position = Vector2(178.5, 111)
+shape = SubResource("RectangleShape2D_6n7ec")

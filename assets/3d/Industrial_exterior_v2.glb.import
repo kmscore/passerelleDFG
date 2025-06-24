@@ -1,0 +1,292 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://rrcbrvkyllq5"
+path="res://.godot/imported/Industrial_exterior_v2.glb-f25baec4df5019309adc06efee419107.scn"
+
+[deps]
+
+source_file="res://assets/3d/Industrial_exterior_v2.glb"
+dest_files=["res://.godot/imported/Industrial_exterior_v2.glb-f25baec4df5019309adc06efee419107.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="assets"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"meshes": {
+"Industrial_exterior_v2_Bridges_1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/3d/Bridge.res"
+},
+"Industrial_exterior_v2_Bridges_3": {
+"generate/lightmap_uv": 2,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
+}
+},
+"nodes": {
+"PATH:Alphalt_Floor": {
+"generate/physics": true
+},
+"PATH:Bags_1": {
+"generate/physics": true
+},
+"PATH:Bags_2": {
+"generate/physics": true
+},
+"PATH:Barrel_1": {
+"generate/physics": true
+},
+"PATH:Barrel_2": {
+"generate/physics": true
+},
+"PATH:Barrel_3": {
+"generate/physics": true
+},
+"PATH:Box_wide_wood": {
+"generate/physics": true
+},
+"PATH:Box_wood": {
+"generate/physics": true
+},
+"PATH:Bridges_1": {
+"generate/physics": true
+},
+"PATH:Bridges_2": {
+"generate/physics": true
+},
+"PATH:Bridges_3": {
+"generate/physics": true
+},
+"PATH:Bridges_end": {
+"generate/physics": true
+},
+"PATH:Bridges_stairs_1": {
+"generate/physics": true
+},
+"PATH:Bridges_stairs_2": {
+"generate/physics": true
+},
+"PATH:Bridges_support_1": {
+"generate/physics": true
+},
+"PATH:Bridges_support_2": {
+"generate/physics": true
+},
+"PATH:Bridges_support_3": {
+"generate/physics": true
+},
+"PATH:Bridges_turn": {
+"generate/physics": true
+},
+"PATH:Building_1": {
+"generate/physics": true
+},
+"PATH:Building_10": {
+"generate/physics": true
+},
+"PATH:Building_11": {
+"generate/physics": true
+},
+"PATH:Building_12": {
+"generate/physics": true
+},
+"PATH:Building_13": {
+"generate/physics": true
+},
+"PATH:Building_2": {
+"generate/physics": true
+},
+"PATH:Building_3": {
+"generate/physics": true
+},
+"PATH:Building_4": {
+"generate/physics": true
+},
+"PATH:Building_5": {
+"generate/physics": true
+},
+"PATH:Building_6": {
+"generate/physics": true
+},
+"PATH:Building_7": {
+"generate/physics": true
+},
+"PATH:Building_8": {
+"generate/physics": true
+},
+"PATH:Building_9": {
+"generate/physics": true
+},
+"PATH:Cargo_1_close": {
+"generate/physics": true
+},
+"PATH:Cargo_1_open": {
+"generate/physics": true
+},
+"PATH:Cargo_2_empty": {
+"generate/physics": true
+},
+"PATH:Cargo_2_full": {
+"generate/physics": true
+},
+"PATH:Concrete_miniwall_long": {
+"generate/physics": true
+},
+"PATH:Concrete_miniwall_short": {
+"generate/physics": true
+},
+"PATH:Concrete_stairs": {
+"generate/physics": true
+},
+"PATH:Cooling_tower": {
+"generate/physics": true
+},
+"PATH:Fence": {
+"generate/physics": true
+},
+"PATH:Fence_corner": {
+"generate/physics": true
+},
+"PATH:Fence_long": {
+"generate/physics": true
+},
+"PATH:Fence_short": {
+"generate/physics": true
+},
+"PATH:Generator": {
+"generate/physics": true
+},
+"PATH:Liquid_reservoir_1": {
+"generate/physics": true
+},
+"PATH:Liquid_reservoir_2": {
+"generate/physics": true
+},
+"PATH:Metal_cabinet_1": {
+"generate/physics": true
+},
+"PATH:Metal_cabinet_2": {
+"generate/physics": true
+},
+"PATH:Palet_single": {
+"generate/physics": true
+},
+"PATH:Palet_stack": {
+"generate/physics": true
+},
+"PATH:Pipes_arch": {
+"generate/physics": true
+},
+"PATH:Pipes_horizontal_long": {
+"generate/physics": true
+},
+"PATH:Pipes_horizontal_short": {
+"generate/physics": true
+},
+"PATH:Pipes_horizontal_turn_1": {
+"generate/physics": true
+},
+"PATH:Pipes_horizontal_turn_2": {
+"generate/physics": true
+},
+"PATH:Pipes_out_1": {
+"generate/physics": true
+},
+"PATH:Pipes_out_2": {
+"generate/physics": true
+},
+"PATH:Pipes_support": {
+"generate/physics": true
+},
+"PATH:Pipes_vertical_long": {
+"generate/physics": true
+},
+"PATH:Pipes_vertical_short": {
+"generate/physics": true
+},
+"PATH:Pipes_vertical_turn": {
+"generate/physics": true
+},
+"PATH:Road_curved": {
+"generate/physics": true
+},
+"PATH:Road_long": {
+"generate/physics": true
+},
+"PATH:Road_short": {
+"generate/physics": true
+},
+"PATH:Road_turn_1": {
+"generate/physics": true
+},
+"PATH:Road_turn_2": {
+"generate/physics": true
+},
+"PATH:Road_turn_3": {
+"generate/physics": true
+},
+"PATH:Roadblock": {
+"generate/physics": true
+},
+"PATH:Ventilation_1": {
+"generate/physics": true
+},
+"PATH:Ventilation_2": {
+"generate/physics": true
+},
+"PATH:Ventilation_2/Ventilation_2_blades": {
+"generate/physics": true
+},
+"PATH:Ventilation_3": {
+"generate/physics": true
+},
+"PATH:Ventilation_3/Ventilation_3_blades": {
+"generate/physics": true
+},
+"PATH:Wall": {
+"generate/physics": true
+},
+"PATH:Wall_column": {
+"generate/physics": true
+},
+"PATH:Wall_corner_1": {
+"generate/physics": true
+},
+"PATH:Wall_corner_2": {
+"generate/physics": true
+},
+"PATH:Wall_corner_3": {
+"generate/physics": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

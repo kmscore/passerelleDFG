@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1s24vgiv1as8"
+path="res://.godot/imported/Opelucid City (White) (20091221) - Pokémon Black & White (Beta) Music.mp3-b44509182e114e59106b7d09550236f1.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/songs/Opelucid City (White) (20091221) - Pokémon Black & White (Beta) Music.mp3"
+dest_files=["res://.godot/imported/Opelucid City (White) (20091221) - Pokémon Black & White (Beta) Music.mp3-b44509182e114e59106b7d09550236f1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

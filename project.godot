@@ -13,12 +13,17 @@ config_version=5
 config/ninetailsrabbit.interaction_kit_3d/interactables_collision_layer=6
 config/ninetailsrabbit.interaction_kit_3d/grabbables_collision_layer=7
 
+[Passerelle]
+
+config/ninetailsrabbit.interaction_kit_3d/interactables_collision_layer=6
+config/ninetailsrabbit.interaction_kit_3d/grabbables_collision_layer=7
+
 [application]
 
-config/name="IndieBlueprint"
+config/name="Passerelle"
 config/description="Indie Blueprint is a comprehensive Godot project template designed to streamline your development process. It includes essential features, optimized settings, and best practices to help you create amazing indie game"
 config/version="1.3.0"
-run/main_scene="res://scenes/entry_point/game-entry_point.tscn"
+run/main_scene="uid://ntiluou0bs8h"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -48,10 +53,11 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=426
+window/size/viewport_height=240
 window/size/window_width_override=1280
 window/size/window_height_override=720
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
@@ -274,12 +280,6 @@ dash={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":74,"key_label":0,"unicode":106,"location":0,"echo":false,"script":null)
 ]
 }
-toggle_inventory={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":73,"key_label":0,"unicode":105,"location":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-]
-}
 item_left={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
@@ -341,10 +341,43 @@ left_motion={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":-1.0,"script":null)
 ]
 }
+sprint={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+toggle_craft_panel={
+"deadzone": 0.2,
+"events": []
+}
+Pickup={
+"deadzone": 0.2,
+"events": []
+}
+inventory={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":73,"key_label":0,"unicode":105,"location":0,"echo":false,"script":null)
+]
+}
+toggle_inventory={
+"deadzone": 0.2,
+"events": []
+}
+skip_action={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+next_action={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
 
 [internationalization]
 
 locale/translations=PackedStringArray("res://localization/translations/de.po", "res://localization/translations/en.mo", "res://localization/translations/en.po", "res://localization/translations/es.mo", "res://localization/translations/es.po", "res://localization/translations/fr.po", "res://localization/translations/it.po", "res://localization/translations/pt.po", "res://localization/translations/ru.po")
+locale/translations_pot_files=PackedStringArray("res://scenes/world/Dialogues/npc.dialogue", "res://scenes/world/Dialogues/Vatya.dialogue")
 
 [layer_names]
 
@@ -358,7 +391,7 @@ locale/translations=PackedStringArray("res://localization/translations/de.po", "
 2d_physics/layer_4="Hitboxes"
 3d_physics/layer_4="Hitboxes"
 2d_physics/layer_5="Shakeables"
-3d_physics/layer_5="Shakeables"
+3d_physics/layer_5="Actionables"
 2d_physics/layer_6="Interactables"
 3d_physics/layer_6="Interactables"
 2d_physics/layer_7="Grabbables"

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dhcynksrfibrl"
+path="res://.godot/imported/Vatya.dialogue-bd17f3f19d3487866712a3de0b5dab80.tres"
+
+[deps]
+
+source_file="res://scenes/world/Dialogues/Vatya.dialogue"
+dest_files=["res://.godot/imported/Vatya.dialogue-bd17f3f19d3487866712a3de0b5dab80.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cadbm74anfb8m"]
+
+[ext_resource type="Script" uid="uid://rvj20lnuo154" path="res://scenes/hit_circle.gd" id="1_hmcpe"]
+[ext_resource type="Texture2D" uid="uid://dr1x5wjcgbq2w" path="res://assets/textures/circle.png" id="1_wxeke"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7n27y"]
+radius = 48.0104
+
+[node name="HitCircle" type="Area2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_hmcpe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7n27y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7.5)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_wxeke")

@@ -1,0 +1,22 @@
+~ start
+Vatya: oh hey what are you doing here?
+Vatya: ?..
+Vatya: ......
+Vatya: Damn will you answer me some day?
+- Hi
+	Celine: my bad... i'm a bit shy
+	Celine: (i'm just ankward around real people)
+	Vatya: Oh it's totally fine aha, what's your name?
+	- Say my name
+		Celine: well it's, it's Celine
+		Vatya: hi mine is Vatya
+		Celine: well. nice to meet you Vatya
+		Vatya: same good luck to you to get inside this shitty tower
+		Celine: (she's nice)
+		=> END
+	- Be a fucking looser and flee
+		=> END
+- Huhhhh
+	Vatya: what?
+	Celine: ...
+=> END

@@ -8,7 +8,7 @@ class_name IndieBlueprintThirdPersonController
 			if is_node_ready():
 				update_click_mode_state_machine()
 
-@export var inventory_data: InventoryData
+
 @export var animated_sprite: AnimatedSprite3D
 @export var smooth_rotation: bool = true
 @export var smooth_rotation_lerp_speed: float = 6.0
